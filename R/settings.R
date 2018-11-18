@@ -6,8 +6,13 @@ use_h3js <- function() {
     pkg_env$ctx$source()
 }
 
+# TODO: rename to 'h3js'
 h3js_call <- function(func_name, ...) {
   pkg_env$ctx$call(func_name, ...)
+}
+
+h3js_map <- function(func_name, data) {
+  pkg_env$ctx$call("vectorize", func_name, data)
 }
 
 .onLoad <- function(libname, pkgname) {
