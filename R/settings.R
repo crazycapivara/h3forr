@@ -9,3 +9,7 @@ use_h3js <- function() {
 h3js_call <- function(func_name, ...) {
   pkg_env$ctx$call(func_name, ...)
 }
+
+.onLoad <- function(libname, pkgname) {
+  use_h3js()
+}
