@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# h3forr
+
+Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
+
+## Installation
+
+You can install h3forr from github with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("crazycapivara/h3forr")
+```
+
+## Quickstart
+
+Core functions:
+
+```{r example}
+library(h3forr)
+
+# Convert a lat/lng point to a hexagon index at resolution 7
+coords <- c(37.3615593, -122.0553238)
+h3_index <- geo_to_h3(coords, res = 7)
+h3_index
+
+# Get the center of the hexagon
+h3_to_geo(h3_index)
+
+# Get the vertices of the hexagon
+h3_to_geo_boundary(h3_index, format_as_geojson = FALSE)
+```
