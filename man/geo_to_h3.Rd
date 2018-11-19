@@ -2,17 +2,27 @@
 % Please edit documentation in R/h3_geo-to-h3.R
 \name{geo_to_h3}
 \alias{geo_to_h3}
-\title{Get the hexagon containing a lat,lon point}
+\alias{geo_to_h3.default}
+\alias{geo_to_h3.data.frame}
+\title{Get the hexagon containing a [lat, lon] point}
 \usage{
-geo_to_h3(lat, lng, res)
+geo_to_h3(coords, res = 7)
+
+\method{geo_to_h3}{default}(coords, res = 7)
+
+\method{geo_to_h3}{data.frame}(coords, res = 7)
 }
 \arguments{
-\item{lat}{latidude}
+\item{coords}{[lat, lng] point}
 
-\item{lng}{longitude}
-
-\item{res}{resolution of hexagons to return}
+\item{res}{resolution of hexagon to return}
 }
 \description{
-Get the hexagon containing a lat,lon point
+Get the hexagon containing a [lat, lon] point
+}
+\examples{
+coords <- c(37.3615593, 122.0553238)
+geo_to_h3(coords)
+
+geo_to_h3(quakes[1:3, c("lat", "long")], res = 5)
 }
