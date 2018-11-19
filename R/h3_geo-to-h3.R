@@ -1,10 +1,24 @@
-#' Get the hexagon containing a lat,lon point
+#' Get the hexagon containing a [lat, lon] point
 #'
-#' @param lat latidude
-#' @param lng longitude
-#' @param res resolution of hexagons to return
+#' @param coords [lat, lng] point
+#' @param res resolution of hexagon to return
 #'
+#' @example inst/examples/api-examples/geo-to-h3.R
+#'
+#' @name geo_to_h3
 #' @export
-geo_to_h3 <- function(lat, lng, res) {
-  h3js_call("h3.geoToH3", lat, lng, res)
+geo_to_h3 <- function(coords, res = 7) {
+  UseMethod("geo_to_h3", coords)
+}
+
+#' @name geo_to_h3
+#' @export
+geo_to_h3.default <- function(coords, res = 7) {
+  h3js_map("geoToH3", list(coords), res)
+}
+
+#' @name geo_to_h3
+#' @export
+geo_to_h3.data.frame <- function(coords, res = 7) {
+  h3js_map("geoToH3", as.matrix(coords), res)
 }

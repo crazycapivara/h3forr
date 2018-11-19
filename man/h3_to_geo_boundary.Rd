@@ -2,13 +2,16 @@
 % Please edit documentation in R/h3_h3-to-geo-boundary.R
 \name{h3_to_geo_boundary}
 \alias{h3_to_geo_boundary}
-\title{Get the vertices of a given hexagon (or pentagon), as an array of [lat, lng] points}
+\title{Get the vertices of a given hexagon (or pentagon)}
 \usage{
-h3_to_geo_boundary(h3_index)
+h3_to_geo_boundary(h3_index, format_as_geojson = TRUE)
 }
 \arguments{
 \item{h3_index}{h3 index}
+
+\item{format_as_geojson}{provide GeoJSON output: [lng, lat] and closed loops?}
 }
 \description{
-Get the vertices of a given hexagon (or pentagon), as an array of [lat, lng] points
+Returns the vertices either as an array of [lat, lng] points
+or as GeoJSON output: [lng, lat] and closed loops.
 }

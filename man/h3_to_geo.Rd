@@ -2,7 +2,7 @@
 % Please edit documentation in R/h3_h3-to-geo.R
 \name{h3_to_geo}
 \alias{h3_to_geo}
-\title{Get the lat,lon center of a given hexagon.}
+\title{Get the [lat, lon] center of a given hexagon}
 \usage{
 h3_to_geo(h3_index)
 }
@@ -10,5 +10,10 @@ h3_to_geo(h3_index)
 \item{h3_index}{h3 index}
 }
 \description{
-Get the lat,lon center of a given hexagon.
+Get the [lat, lon] center of a given hexagon
+}
+\examples{
+quakes[1:3, c("lat", "long")] \%>\%
+  geo_to_h3() \%>\%
+  h3_to_geo()
 }
