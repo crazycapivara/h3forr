@@ -14,7 +14,7 @@ lng <- -122.0553238
 res <- 7
 
 # Convert a lat/lng point to a hexagon index at resolution 7
-h3_index <- geo_to_h3(lat, lng, res)
+h3_index <- geo_to_h3(c(lat, lng), res)
 
 # Get the center of the hexagon
 hex_center_coordinates <- h3_to_geo(h3_index)
