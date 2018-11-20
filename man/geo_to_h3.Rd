@@ -4,6 +4,7 @@
 \alias{geo_to_h3}
 \alias{geo_to_h3.default}
 \alias{geo_to_h3.data.frame}
+\alias{geo_to_h3.sf}
 \title{Get the hexagon containing a [lat, lon] point}
 \usage{
 geo_to_h3(coords, res = 7)
@@ -11,6 +12,8 @@ geo_to_h3(coords, res = 7)
 \method{geo_to_h3}{default}(coords, res = 7)
 
 \method{geo_to_h3}{data.frame}(coords, res = 7)
+
+\method{geo_to_h3}{sf}(coords, res = 7)
 }
 \arguments{
 \item{coords}{[lat, lng] point}
