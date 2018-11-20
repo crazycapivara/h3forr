@@ -9,7 +9,8 @@ Description: Provides R bindings for H3 <https://uber.github.io/h3/>,
 License: MIT + file LICENSE
 Imports:
   V8,
-  magrittr
+  magrittr,
+  purrr
 Suggests:
   sf
 Encoding: UTF-8
