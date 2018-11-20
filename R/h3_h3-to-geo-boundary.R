@@ -10,8 +10,10 @@
 h3_to_geo_boundary <- function(h3_index, format_as_geojson = TRUE) {
   res <- h3js_map("h3ToGeoBoundary", h3_index, format_as_geojson)
   if (length(dim(res)) == 3) {
-    return(aperm(res, c(2,3,1)))
+    # return(aperm(res, c(2,3,1)))
+    res %<>% purrr::array_tree(1)
   }
 
+  if (format_as_geojson) res %<>% h3forr_class("lng_lat_closed")
   res
 }
