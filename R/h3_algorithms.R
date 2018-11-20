@@ -16,3 +16,16 @@ k_ring <- function(h3_index, ring_size = 1) {
 
   res
 }
+
+#' Get all hexagons in a k-ring around a given center, in an array of arrays ordered by distance from the origin.
+#'
+#' The order of the hexagons within each ring is undefined.
+#'
+#' @inheritParams k_ring
+#'
+#' @example inst/examples/api-examples/k-ring-distances.R
+#'
+#' @export
+k_ring_distances <- function(h3_index, ring_size = 1) {
+  h3js_map("kRingDistances", h3_index, ring_size)
+}
