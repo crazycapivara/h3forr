@@ -1,6 +1,6 @@
 #' Get the [lat, lon] center of a given hexagon
 #'
-#' @param h3_index h3 index
+#' @param h3_index H3 index
 #'
 #' @example inst/examples/api-examples/h3-to-geo.R
 #'
