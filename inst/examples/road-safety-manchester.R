@@ -42,12 +42,12 @@ hexagons$count <- frequency_tbl$count
 pal <- colorBin("YlOrRd", domain = hexagons$count)
 
 map <- leaflet(data = hexagons) %>%
-  addTiles() %>%
+  addProviderTiles("Stamen.Toner") %>%
   addPolygons(
     weight = 2,
     color = "white",
     fillColor = ~ pal(count),
-    fillOpacity = 0.6,
+    fillOpacity = 0.8,
     popup = ~ sprintf("%i accidents", count)
   ) %>%
   addLegend(
