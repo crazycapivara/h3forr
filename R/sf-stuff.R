@@ -9,11 +9,10 @@ h3_as_sf <- function(data) {
     sf::st_sf()
 }
 
+## NEW
 features_to_sf <- function(features) {
   sf::st_sfc(features, crs = 4326) %>% sf::st_sf()
 }
-
-## NEW
 
 #' Parse geo boundary array(s) to sf object(s)
 #'
