@@ -29,3 +29,14 @@ k_ring <- function(h3_index, ring_size = 1) {
 k_ring_distances <- function(h3_index, ring_size = 1) {
   h3js_map("kRingDistances", h3_index, ring_size)
 }
+
+#' Get all hexagons in a hollow hexagonal ring centered at origin with sides of a given length.
+#'
+#' Unlike \code{\link{k_ring}}, this function will throw an error if there is a pentagon anywhere in the ring.
+#'
+#' @inheritParams k_ring
+#'
+#' @export
+hex_ring <- function(h3_index, ring_size = 1) {
+  h3js_map("hexRing", h3_index, ring_size)
+}
