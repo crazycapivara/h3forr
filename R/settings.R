@@ -10,9 +10,9 @@ use_h3js <- function() {
   use_h3js()
 }
 
-# TODO: rename to 'h3js'
-h3js_call <- function(func_name, ...) {
-  pkg_env$ctx$call(func_name, ...)
+h3js <- function(func_name, ...) {
+  paste0("h3.", func_name) %>%
+    pkg_env$ctx$call(...)
 }
 
 h3js_map <- function(func_name, data, ...) {
