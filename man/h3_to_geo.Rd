@@ -7,7 +7,7 @@
 h3_to_geo(h3_index)
 }
 \arguments{
-\item{h3_index}{h3 index}
+\item{h3_index}{H3 index}
 }
 \description{
 Get the [lat, lon] center of a given hexagon

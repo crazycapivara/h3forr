@@ -4,6 +4,7 @@
 \alias{geo_to_h3}
 \alias{geo_to_h3.default}
 \alias{geo_to_h3.data.frame}
+\alias{geo_to_h3.sf}
 \title{Get the hexagon containing a [lat, lon] point}
 \usage{
 geo_to_h3(coords, res = 7)
@@ -11,6 +12,8 @@ geo_to_h3(coords, res = 7)
 \method{geo_to_h3}{default}(coords, res = 7)
 
 \method{geo_to_h3}{data.frame}(coords, res = 7)
+
+\method{geo_to_h3}{sf}(coords, res = 7)
 }
 \arguments{
 \item{coords}{[lat, lng] point}
@@ -21,8 +24,8 @@ geo_to_h3(coords, res = 7)
 Get the hexagon containing a [lat, lon] point
 }
 \examples{
-coords <- c(37.3615593, 122.0553238)
-geo_to_h3(coords)
+coords <- c(37.3615593, -122.0553238)
+geo_to_h3(coords, 7)
 
 geo_to_h3(quakes[1:3, c("lat", "long")], res = 5)
 }
