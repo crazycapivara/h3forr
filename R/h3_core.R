@@ -2,9 +2,9 @@
 
 #' Check whether a given string represents a valid H3 index
 #'
-#' @param h3_index H3 index [scalar or vector]
+#' @param h3_index H3 index [vector]
 #'
-#' @return boolean scalar or vector
+#' @return boolean vector
 #'
 #' @export
 h3_is_valid <- function(h3_index) {
@@ -15,7 +15,7 @@ h3_is_valid <- function(h3_index) {
 #'
 #' @inheritParams h3_is_valid
 #'
-#' @return numeric scalar or vector
+#' @return numeric vector
 #'
 #' @export
 h3_get_resolution <- function(h3_index) {

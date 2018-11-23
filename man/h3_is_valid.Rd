@@ -7,10 +7,10 @@
 h3_is_valid(h3_index)
 }
 \arguments{
-\item{h3_index}{H3 index [scalar or vector]}
+\item{h3_index}{H3 index [vector]}
 }
 \value{
-boolean scalar or vector
+boolean vector
 }
 \description{
 Check whether a given string represents a valid H3 index

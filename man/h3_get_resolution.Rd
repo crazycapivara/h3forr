@@ -7,10 +7,10 @@
 h3_get_resolution(h3_index)
 }
 \arguments{
-\item{h3_index}{H3 index [scalar or vector]}
+\item{h3_index}{H3 index [vector]}
 }
 \value{
-numeric scalar or vector
+numeric vector
 }
 \description{
 Get the resolution of an H3 index
