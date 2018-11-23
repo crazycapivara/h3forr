@@ -2,16 +2,22 @@
 % Please edit documentation in R/h3_algorithms.R
 \name{k_ring}
 \alias{k_ring}
-\title{Get all hexagons in a k-ring around a given center.}
+\title{Get all hexagons in a k-ring around a given center}
 \usage{
 k_ring(h3_index, ring_size = 1)
 }
 \arguments{
-\item{h3_index}{H3 index of center hexagon}
+\item{h3_index}{H3 index of center hexagon [vector]}
 
 \item{ring_size}{number of rings}
 }
+\value{
+H3 index vector or list of H3 index vectors
+}
 \description{
+Get all hexagons in a k-ring around a given center
+}
+\note{
 The order of the hexagons is undefined.
 }
 \examples{

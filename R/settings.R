@@ -1,13 +1,18 @@
 pkg_env <- new.env()
 
-use_h3js <- function() {
+pkg_env$h3forr_classes <- list(
+  lat_lng = "lat_lng",
+  lat_lng_closed = "lat_lng_closed"
+)
+
+use_h3js <- function(pkgname) {
   pkg_env$ctx <- V8::v8()
-  system.file("js/h3-bundle.js", package = "h3forr") %>%
+  system.file("js/h3-bundle.js", package = pkgname) %>%
     pkg_env$ctx$source()
 }
 
 .onLoad <- function(libname, pkgname) {
-  use_h3js()
+  use_h3js(pkgname)
 }
 
 h3js <- function(func_name, ...) {

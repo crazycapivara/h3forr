@@ -2,7 +2,7 @@
 % Please edit documentation in R/h3_algorithms.R
 \name{h3_set_to_multi_polygon}
 \alias{h3_set_to_multi_polygon}
-\title{Get the outlines of a set of H3 hexagons.}
+\title{Get the outlines of a set of H3 hexagons}
 \usage{
 h3_set_to_multi_polygon(h3_index, format_as_geojson = TRUE)
 }
