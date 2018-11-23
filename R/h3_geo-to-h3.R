@@ -15,8 +15,14 @@ geo_to_h3 <- function(coords, res = 7) {
 
 #' @name geo_to_h3
 #' @export
-geo_to_h3.default <- function(coords, res = 7) {
+geo_to_h3.numeric <- function(coords, res = 7) {
   h3js_map("geoToH3", list(coords), res)
+}
+
+#' @name geo_to_h3
+#' @export
+geo_to_h3.matrix <- function(coords, res = 7) {
+  h3js_map("geoToH3", coords, res)
 }
 
 #' @name geo_to_h3

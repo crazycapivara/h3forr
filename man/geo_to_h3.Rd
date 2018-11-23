@@ -2,14 +2,17 @@
 % Please edit documentation in R/h3_geo-to-h3.R
 \name{geo_to_h3}
 \alias{geo_to_h3}
-\alias{geo_to_h3.default}
+\alias{geo_to_h3.numeric}
+\alias{geo_to_h3.matrix}
 \alias{geo_to_h3.data.frame}
 \alias{geo_to_h3.sf}
 \title{Get the hexagons containing a [lat, lon] point}
 \usage{
 geo_to_h3(coords, res = 7)
 
-\method{geo_to_h3}{default}(coords, res = 7)
+\method{geo_to_h3}{numeric}(coords, res = 7)
+
+\method{geo_to_h3}{matrix}(coords, res = 7)
 
 \method{geo_to_h3}{data.frame}(coords, res = 7)
 
