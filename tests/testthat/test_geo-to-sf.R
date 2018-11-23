@@ -36,9 +36,6 @@ test_that("Boundary points (single hexagon)", {
   expect_equal(dim(sf_obj), c(6, 1))
 })
 
-h3_to_geo_boundary(h3_indexes, format_as_geojson = FALSE) %>%
-  geo_to_sf()
-
 test_that("Boundary points (multiple hexagons)", {
   # Prepare
   h3_geo <- h3_to_geo_boundary(get_h3_indexes(), format_as_geojson = FALSE)
