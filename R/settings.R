@@ -1,5 +1,10 @@
 pkg_env <- new.env()
 
+pkg_env$h3forr_classes <- list(
+  lat_lng = "lat_lng",
+  lat_lng_closed = "lat_lng_closed"
+)
+
 use_h3js <- function(pkgname) {
   pkg_env$ctx <- V8::v8()
   system.file("js/h3-bundle.js", package = pkgname) %>%
