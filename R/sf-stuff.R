@@ -14,9 +14,9 @@ features_to_sf <- function(features) {
   sf::st_sfc(features, crs = 4326) %>% sf::st_sf()
 }
 
-#' Parse geo boundary array(s) to sf object(s)
+#' Parse geo boundary array to sf object
 #'
-#' @param obj geo boundary array(s)
+#' @param obj geo boundary array
 #'
 #' @name geo_boundary_to_sf
 #' @export

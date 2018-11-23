@@ -4,7 +4,7 @@
 \alias{geo_boundary_to_sf}
 \alias{geo_boundary_to_sf.default}
 \alias{geo_boundary_to_sf.list}
-\title{Parse geo boundary array(s) to sf object(s)}
+\title{Parse geo boundary array to sf object}
 \usage{
 geo_boundary_to_sf(obj)
 
@@ -13,8 +13,8 @@ geo_boundary_to_sf(obj)
 \method{geo_boundary_to_sf}{list}(obj)
 }
 \arguments{
-\item{obj}{geo boundary array(s)}
+\item{obj}{geo boundary array}
 }
 \description{
-Parse geo boundary array(s) to sf object(s)
+Parse geo boundary array to sf object
 }

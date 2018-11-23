@@ -5,7 +5,7 @@
 \alias{geo_to_h3.default}
 \alias{geo_to_h3.data.frame}
 \alias{geo_to_h3.sf}
-\title{Get hexagons containing [lat, lon] points}
+\title{Get the hexagons containing a [lat, lon] point}
 \usage{
 geo_to_h3(coords, res = 7)
 
@@ -16,12 +16,15 @@ geo_to_h3(coords, res = 7)
 \method{geo_to_h3}{sf}(coords, res = 7)
 }
 \arguments{
-\item{coords}{[lat, lng] points}
+\item{coords}{[lat, lng] point [vector, data.frame or sf object]}
 
-\item{res}{resolution of hexagons to return}
+\item{res}{resolution of hexagon to return}
+}
+\value{
+H3 index vector
 }
 \description{
-Get hexagons containing [lat, lon] points
+Get the hexagons containing a [lat, lon] point
 }
 \examples{
 coords <- c(37.3615593, -122.0553238)

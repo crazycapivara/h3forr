@@ -7,9 +7,9 @@
 polyfill(coords, res = 7, is_geojson = TRUE)
 }
 \arguments{
-\item{coords}{[lat, lng] points}
+\item{coords}{[lat, lng] point [vector, data.frame or sf object]}
 
-\item{res}{resolution of hexagons to return}
+\item{res}{resolution of hexagon to return}
 
 \item{is_geojson}{expect GeoJson-style [lng, lat] pairs instead of [lat, lng]?}
 }

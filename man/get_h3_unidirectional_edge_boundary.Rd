@@ -2,7 +2,7 @@
 % Please edit documentation in R/h3_edges.R
 \name{get_h3_unidirectional_edge_boundary}
 \alias{get_h3_unidirectional_edge_boundary}
-\title{Get the vertices of a given edge as an array of [lat, lng] points.}
+\title{Get the vertices of a given edge as an array of [lat, lng] points}
 \usage{
 get_h3_unidirectional_edge_boundary(h3_edge_index,
   format_as_geojson = TRUE)
@@ -13,7 +13,7 @@ get_h3_unidirectional_edge_boundary(h3_edge_index,
 \item{format_as_geojson}{provide GeoJSON output: [lng, lat] and closed loops?}
 }
 \description{
-Get the vertices of a given edge as an array of [lat, lng] points.
+Get the vertices of a given edge as an array of [lat, lng] points
 }
 \note{
 Edges that cross the edge of an icosahedron face may return 3 coordinates.

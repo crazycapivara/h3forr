@@ -1,7 +1,9 @@
-#' Get hexagons containing [lat, lon] points
+#' Get the hexagons containing a [lat, lon] point
 #'
-#' @param coords [lat, lng] points
-#' @param res resolution of hexagons to return
+#' @param coords [lat, lng] point [vector, data.frame or sf object]
+#' @param res resolution of hexagon to return
+#'
+#' @return H3 index vector
 #'
 #' @example inst/examples/api-reference/geo-to-h3.R
 #'
