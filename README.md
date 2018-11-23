@@ -5,6 +5,8 @@ h3forr
 
 Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
 
+![](man/figures/README-road-safety.png)
+
 Installation
 ------------
 

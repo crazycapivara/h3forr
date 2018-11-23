@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 
 Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
 
+![](man/figures/README-road-safety.png)
+
 ## Installation
 
 You can install h3forr from github with:
