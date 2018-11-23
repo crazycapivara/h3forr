@@ -2,15 +2,19 @@
 % Please edit documentation in R/h3_algorithms.R
 \name{hex_ring}
 \alias{hex_ring}
-\title{Get all hexagons in a hollow hexagonal ring centered at origin with sides of a given length.}
+\title{Get all hexagons in a hollow hexagonal ring centered at origin with sides of a given length}
 \usage{
 hex_ring(h3_index, ring_size = 1)
 }
 \arguments{
-\item{h3_index}{H3 index of center hexagon}
+\item{h3_index}{H3 index of center hexagon [vector]}
 
 \item{ring_size}{number of rings}
 }
 \description{
-Unlike \code{\link{k_ring}}, this function will throw an error if there is a pentagon anywhere in the ring.
+Get all hexagons in a hollow hexagonal ring centered at origin with sides of a given length
+}
+\note{
+Unlike \code{\link{k_ring}},
+  this function will throw an error if there is a pentagon anywhere in the ring.
 }

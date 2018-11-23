@@ -1,7 +1,7 @@
 Package: h3forr
 Title: An R Interface to H3
-Version: 0.0.1
-Date: 2018-11-17
+Version: 0.1.2
+Date: 2018-11-23
 Authors@R: person("Stefan", "Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
 Description: Provides R bindings for H3 <https://uber.github.io/h3/>,
@@ -12,7 +12,8 @@ Imports:
   magrittr,
   purrr
 Suggests:
-  sf
+  sf,
+  testthat
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0

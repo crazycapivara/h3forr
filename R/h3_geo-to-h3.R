@@ -1,9 +1,9 @@
-#' Get the hexagon containing a [lat, lon] point
+#' Get hexagons containing [lat, lon] points
 #'
-#' @param coords [lat, lng] point
-#' @param res resolution of hexagon to return
+#' @param coords [lat, lng] points
+#' @param res resolution of hexagons to return
 #'
-#' @example inst/examples/api-examples/geo-to-h3.R
+#' @example inst/examples/api-reference/geo-to-h3.R
 #'
 #' @name geo_to_h3
 #' @export
