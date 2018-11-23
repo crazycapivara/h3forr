@@ -12,7 +12,8 @@ Imports:
   magrittr,
   purrr
 Suggests:
-  sf
+  sf,
+  testthat
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0

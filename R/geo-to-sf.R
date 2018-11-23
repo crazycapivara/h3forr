@@ -29,7 +29,7 @@ geo_to_sf.numeric <- function(lat_lng_obj) {
 #' @name geo_to_sf
 #' @export
 geo_to_sf.list <- function(lat_lng_obj) {
-  coords <- lapply(seq_along(lat_lng_obj), function(idx) {
+  lat_lng_obj <- lapply(seq_along(lat_lng_obj), function(idx) {
     cbind(lat_lng_obj[[idx]], idx)
   })
   do.call(rbind, lat_lng_obj) %>%
