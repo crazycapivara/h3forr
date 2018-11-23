@@ -97,10 +97,7 @@ get_h3_unidirectional_edges_from_hexagon <- function(h3_index) {
   res
 }
 
-
 #' Get the vertices of a given edge as an array of [lat, lng] points.
-#'
-#' @param h3_edge
 #'
 #' @note Edges that cross the edge of an icosahedron face may return 3 coordinates.
 #'
@@ -111,6 +108,8 @@ get_h3_unidirectional_edges_from_hexagon <- function(h3_index) {
 get_h3_unidirectional_edge_boundary <- function(h3_edge_index, format_as_geojson = TRUE) {
   res <- h3js_map("getH3UnidirectionalEdgeBoundary", h3_edge_index, format_as_geojson)
   if (!is.matrix(res)) res %<>% purrr::array_tree(1)
+
+  if (format_as_geojson) res %<>% h3forr_class(pkg_env$h3forr_classes$lat_lng)
 
   res
 }
