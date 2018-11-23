@@ -1,11 +1,11 @@
-#' Get all hexagons in a k-ring around a given center.
+#' Get all hexagons in a k-ring around a given center
 #'
-#' The order of the hexagons is undefined.
+#' @note The order of the hexagons is undefined.
 #'
-#' @param h3_index H3 index of center hexagon
+#' @param h3_index H3 indexes of center hexagons
 #' @param ring_size number of rings
 #'
-#' @example inst/examples/api-examples/k-ring.R
+#' @example inst/examples/api-reference/k-ring.R
 #'
 #' @export
 k_ring <- function(h3_index, ring_size = 1) {
@@ -23,7 +23,7 @@ k_ring <- function(h3_index, ring_size = 1) {
 #'
 #' @inheritParams k_ring
 #'
-#' @example inst/examples/api-examples/k-ring-distances.R
+#' @example inst/examples/api-reference/k-ring-distances.R
 #'
 #' @export
 k_ring_distances <- function(h3_index, ring_size = 1) {
@@ -51,7 +51,7 @@ hex_ring <- function(h3_index, ring_size = 1) {
 #' @inheritParams geo_to_h3
 #' @param is_geojson expect GeoJson-style [lng, lat] pairs instead of [lat, lng]?
 #'
-#' @example inst/examples/api-examples/polyfill.R
+#' @example inst/examples/api-reference/polyfill.R
 #'
 #' @export
 polyfill <- function(coords, res = 7, is_geojson = TRUE) {
@@ -66,7 +66,7 @@ polyfill <- function(coords, res = 7, is_geojson = TRUE) {
 #'
 #' @inheritParams h3_to_geo_boundary
 #'
-#' @example inst/examples/api-examples/h3-set-to-multipolygon.R
+#' @example inst/examples/api-reference/h3-set-to-multipolygon.R
 #'
 #' @export
 h3_set_to_multi_polygon <- function(h3_index, format_as_geojson = TRUE) {

@@ -2,7 +2,7 @@
 #'
 #' @param h3_index H3 index
 #'
-#' @example inst/examples/api-examples/h3-to-geo.R
+#' @example inst/examples/api-reference/h3-to-geo.R
 #'
 #' @export
 h3_to_geo <- function(h3_index) {
