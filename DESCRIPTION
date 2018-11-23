@@ -1,6 +1,6 @@
 Package: h3forr
 Title: An R Interface to H3
-Version: 0.1.1
+Version: 0.1.2
 Date: 2018-11-23
 Authors@R: person("Stefan", "Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
