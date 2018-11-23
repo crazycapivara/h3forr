@@ -2,7 +2,7 @@
 % Please edit documentation in R/h3_algorithms.R
 \name{polyfill}
 \alias{polyfill}
-\title{Get all hexagons with centers contained in a given polygon.}
+\title{Get all hexagons with centers contained in a given polygon}
 \usage{
 polyfill(coords, res = 7, is_geojson = TRUE)
 }
@@ -15,8 +15,8 @@ polyfill(coords, res = 7, is_geojson = TRUE)
 }
 \description{
 The polygon is specified with GeoJson semantics as an array of loops.
-Each loop is an array of [lat, lng] pairs (or [lng, lat] if isGeoJson is specified).
-The first loop is the perimeter of the polygon, and subsequent loops are expected to be holes.
+Each loop is an array of [lat, lng] pairs (or [lng, lat] if \code{is_geoson} is specified).
+The first loop is the perimeter of the polygon, subsequent loops are expected to be holes.
 }
 \examples{
 library(sf)

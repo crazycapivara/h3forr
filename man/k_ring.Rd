@@ -7,9 +7,12 @@
 k_ring(h3_index, ring_size = 1)
 }
 \arguments{
-\item{h3_index}{H3 indexes of center hexagons}
+\item{h3_index}{H3 index of center hexagon [vector]}
 
 \item{ring_size}{number of rings}
+}
+\value{
+H3 index vector or list of H3 index vectors
 }
 \description{
 Get all hexagons in a k-ring around a given center
