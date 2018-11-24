@@ -1,16 +1,20 @@
 Package: h3forr
 Title: An R Interface to H3
-Version: 0.1.2
+Version: 0.1.3
 Date: 2018-11-23
 Authors@R: person("Stefan", "Kuethe", role = c("aut", "cre"), email = "crazycapivara@gmail.com")
 Maintainer: Stefan Kuethe <crazycapivara@gmail.com>
 Description: Provides R bindings for H3 <https://uber.github.io/h3/>,
   Uber's hexagonal hierarchical spatial indexing system.
+URL: https://github.com/crazycapivara/h3forr/
+BugReports: https://github.com/crazycapivara/h3forr/issues/
 License: MIT + file LICENSE
+Depends: R (>= 3.3)
 Imports:
   V8,
   magrittr,
-  purrr
+  purrr,
+  tibble
 Suggests:
   sf,
   testthat
