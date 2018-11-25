@@ -2,19 +2,19 @@
 #'
 #' @note The order of the hexagons is undefined.
 #'
-#' @param h3_index H3 index of center hexagon [vector]
+#' @param h3_index character vector representing H3 indexes
 #' @param ring_size number of rings
 #'
-#' @return H3 index vector or list of H3 index vectors
+#' @return H3 indexes; list of character vectors if multiple centers are supplied
 #'
 #' @example inst/examples/api-reference/k-ring.R
 #'
 #' @export
 k_ring <- function(h3_index, ring_size = 1) {
-  res <- h3js_map("kRing", h3_index, ring_size)
-  if (is.matrix(res)) return(purrr::array_tree(res, 1))
+  result <- h3js_map("kRing", h3_index, ring_size)
+  if (is.matrix(result)) return(purrr::array_tree(result, 1))
 
-  res
+  result
 }
 
 #' Get all hexagons in a k-ring around a given center
@@ -26,7 +26,8 @@ k_ring <- function(h3_index, ring_size = 1) {
 #'
 #' @inheritParams k_ring
 #'
-#' @return list of H3 index vectors
+#' @return H3 indexes; list of character vectors ordered by distance (ring number);
+#' list of lists if multiple centers are supplied
 #'
 #' @example inst/examples/api-reference/k-ring-distances.R
 #'

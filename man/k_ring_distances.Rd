@@ -7,12 +7,13 @@
 k_ring_distances(h3_index, ring_size = 1)
 }
 \arguments{
-\item{h3_index}{H3 index of center hexagon [vector]}
+\item{h3_index}{character vector representing H3 indexes}
 
 \item{ring_size}{number of rings}
 }
 \value{
-list of H3 index vectors
+H3 indexes; list of character vectors ordered by distance (ring number);
+list of lists if multiple centers are supplied
 }
 \description{
 Get all hexagons in a k-ring around a given center

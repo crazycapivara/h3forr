@@ -7,7 +7,7 @@
 hex_ring(h3_index, ring_size = 1)
 }
 \arguments{
-\item{h3_index}{H3 index of center hexagon [vector]}
+\item{h3_index}{character vector representing H3 indexes}
 
 \item{ring_size}{number of rings}
 }
