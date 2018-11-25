@@ -26,3 +26,9 @@ get_sample_h3_edge_index <- function() {
   indexes <- get_sample_h3_indexes()
   get_h3_unidirectional_edge(indexes[1], indexes[2])
 }
+
+h3_count <- function(h3_index) {
+  table(h3_index) %>%
+    # as.data.frame(responseName = "count") %>%
+    tibble::as_tibble()
+}
