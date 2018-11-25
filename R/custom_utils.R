@@ -27,8 +27,14 @@ get_sample_h3_edge_index <- function() {
   get_h3_unidirectional_edge(indexes[1], indexes[2])
 }
 
-h3_count <- function(h3_index) {
-  table(h3_index) %>%
+count_h3 <- function(h3_index, to_sf = TRUE) {
+  freq_tbl <- table(h3_index) %>%
     # as.data.frame(responseName = "count") %>%
     tibble::as_tibble()
+  if (!to_sf) return(freq_tbl)
+
+  geo <- h3_to_geo_boundary(freq_tbl$h3_index) %>%
+    geo_boundary_to_sf()
+  geo$count <- freq_tbl$n
+  geo
 }
