@@ -2,21 +2,25 @@
 % Please edit documentation in R/h3_algorithms.R
 \name{polyfill}
 \alias{polyfill}
+\alias{polyfill.matrix}
+\alias{polyfill.data.frame}
 \title{Get all hexagons with centers contained in a given polygon}
 \usage{
 polyfill(coords, res = 7, is_geojson = TRUE)
+
+\method{polyfill}{matrix}(coords, res = 7, is_geojson = TRUE)
+
+\method{polyfill}{data.frame}(coords, res = 7, is_geojson = TRUE)
 }
 \arguments{
 \item{coords}{[lat, lng] point [vector, data.frame or sf object]}
 
 \item{res}{resolution of hexagon to return}
 
-\item{is_geojson}{expect GeoJson-style [lng, lat] pairs instead of [lat, lng]?}
+\item{is_geojson}{expect [lng, lat] pairs instead of [lat, lng]?}
 }
 \description{
-The polygon is specified with GeoJson semantics as an array of loops.
-Each loop is an array of [lat, lng] pairs (or [lng, lat] if \code{is_geoson} is specified).
-The first loop is the perimeter of the polygon, subsequent loops are expected to be holes.
+Get all hexagons with centers contained in a given polygon
 }
 \examples{
 library(sf)
@@ -25,9 +29,17 @@ nc <- system.file("shape/nc.shp", package = "sf") \%>\%
   st_read(quiet = TRUE)
 
 st_geometry(nc[1, ]) \%>\% plot()
-coords <- st_coordinates(nc[1, ])[, c("X", "Y")]
 
+coords <- st_coordinates(nc[1, ])[, c("X", "Y")]
 polyfill(coords) \%>\% h3_to_geo_boundary() \%>\%
+  geo_boundary_to_sf() \%>\%
+  plot(add = TRUE)
+
+list(greater_manchester) \%>\% st_polygon() \%>\% st_sfc(crs = 4326) \%>\%
+  plot()
+
+polyfill(greater_manchester, 6) \%>\%
+  h3_to_geo_boundary() \%>\%
   geo_boundary_to_sf() \%>\%
   plot(add = TRUE)
 }

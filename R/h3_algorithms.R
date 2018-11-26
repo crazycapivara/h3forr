@@ -48,24 +48,34 @@ hex_ring <- function(h3_index, ring_size = 1) {
   h3js_map("hexRing", h3_index, ring_size)
 }
 
-### TODO: S3 method for sf objects
+## TODO: S3 method for sf objects
+## -----
 #' Get all hexagons with centers contained in a given polygon
 #'
-#' The polygon is specified with GeoJson semantics as an array of loops.
-#' Each loop is an array of [lat, lng] pairs (or [lng, lat] if \code{is_geoson} is specified).
-#' The first loop is the perimeter of the polygon, subsequent loops are expected to be holes.
-#'
 #' @inheritParams geo_to_h3
-#' @param is_geojson expect GeoJson-style [lng, lat] pairs instead of [lat, lng]?
+#' @param is_geojson expect [lng, lat] pairs instead of [lat, lng]?
 #'
 #' @example inst/examples/api-reference/polyfill.R
 #'
+#' @name polyfill
 #' @export
 polyfill <- function(coords, res = 7, is_geojson = TRUE) {
+  UseMethod("polyfill", coords)
+}
+
+#' @name polyfill
+#' @export
+polyfill.matrix <- function(coords, res = 7, is_geojson = TRUE) {
   h3js("polyfill", coords, res, is_geojson)
 }
 
-#' Get the outlines of a set of H3 hexagons
+#' @name polyfill
+#' @export
+polyfill.data.frame <- function(coords, res = 7, is_geojson = TRUE) {
+  h3js("polyfill", as.matrix(coords), res, is_geojson)
+}
+
+#' Get the outlines of a set of hexagons
 #'
 #' Returns GeoJSON MultiPolygon format
 #' (an array of polygons, each with an array of loops, each an array of coordinates).
