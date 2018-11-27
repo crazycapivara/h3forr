@@ -19,11 +19,12 @@ test_that("sf object", {
   # Prepare
   nc <- system.file("shape/nc.shp", package = "sf") %>%
     sf::st_read(quiet = TRUE)
+  resolution <- 5
 
   # Act
-  h3_index_list <- polyfill(nc[1:2, ], 5)
+  h3_index_list <- polyfill(nc[1:2, ], resolution)
   h3_indexes <- unlist(h3_index_list)
-  h3_indexes2 <- polyfill(nc[1, ], 5)
+  h3_indexes2 <- polyfill(nc[1, ], resolution)
 
   # Assert
   expect_is(h3_index_list, "list")
