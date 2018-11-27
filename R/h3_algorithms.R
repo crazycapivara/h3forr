@@ -75,6 +75,12 @@ polyfill.data.frame <- function(coords, res = 7, is_geojson = TRUE) {
   h3js("polyfill", as.matrix(coords), res, is_geojson)
 }
 
+#' @name polyfill
+#' @export
+polyfill.list <- function(coords, res = 7, is_geojson = TRUE) {
+  h3js_map2("polyfill", coords, res, is_geojson)
+}
+
 #' Get the outlines of a set of hexagons
 #'
 #' Returns GeoJSON MultiPolygon format

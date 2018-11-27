@@ -4,6 +4,7 @@
 \alias{polyfill}
 \alias{polyfill.matrix}
 \alias{polyfill.data.frame}
+\alias{polyfill.list}
 \title{Get all hexagons with centers contained in a given polygon}
 \usage{
 polyfill(coords, res = 7, is_geojson = TRUE)
@@ -11,6 +12,8 @@ polyfill(coords, res = 7, is_geojson = TRUE)
 \method{polyfill}{matrix}(coords, res = 7, is_geojson = TRUE)
 
 \method{polyfill}{data.frame}(coords, res = 7, is_geojson = TRUE)
+
+\method{polyfill}{list}(coords, res = 7, is_geojson = TRUE)
 }
 \arguments{
 \item{coords}{[lat, lng] point [vector, data.frame or sf object]}
