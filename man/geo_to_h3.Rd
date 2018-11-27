@@ -6,7 +6,7 @@
 \alias{geo_to_h3.matrix}
 \alias{geo_to_h3.data.frame}
 \alias{geo_to_h3.sf}
-\title{Get the hexagons containing a [lat, lon] point}
+\title{Get all hexagons containing [lat, lng] points}
 \usage{
 geo_to_h3(coords, res = 7)
 
@@ -19,15 +19,16 @@ geo_to_h3(coords, res = 7)
 \method{geo_to_h3}{sf}(coords, res = 7)
 }
 \arguments{
-\item{coords}{[lat, lng] point [vector, data.frame or sf object]}
+\item{coords}{numeric vector, matrix or data.frame with [lat, lng] pairs;
+object of class \code{sf} (geometry type: \code{POINT})}
 
-\item{res}{resolution of hexagon to return}
+\item{res}{resolution of hexagons to return; number between 0 and 15}
 }
 \value{
-H3 index vector
+H3 indexes; character vector
 }
 \description{
-Get the hexagons containing a [lat, lon] point
+Get all hexagons containing [lat, lng] points
 }
 \examples{
 coords <- c(37.3615593, -122.0553238)

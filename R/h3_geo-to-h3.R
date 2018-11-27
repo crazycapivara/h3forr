@@ -1,9 +1,12 @@
-#' Get the hexagons containing a [lat, lon] point
+## core functions
+
+#' Get all hexagons containing [lat, lng] points
 #'
-#' @param coords [lat, lng] point [vector, data.frame or sf object]
-#' @param res resolution of hexagon to return
+#' @param coords numeric vector, matrix or data.frame with [lat, lng] pairs;
+#' object of class \code{sf} (geometry type: \code{POINT})
+#' @param res resolution of hexagons to return; number between 0 and 15
 #'
-#' @return H3 index vector
+#' @return H3 indexes; character vector
 #'
 #' @example inst/examples/api-reference/geo-to-h3.R
 #'
