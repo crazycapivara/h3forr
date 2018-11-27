@@ -5,6 +5,7 @@
 \alias{polyfill.matrix}
 \alias{polyfill.data.frame}
 \alias{polyfill.list}
+\alias{polyfill.sf}
 \title{Get all hexagons with centers contained in a given polygon}
 \usage{
 polyfill(coords, res = 7, is_geojson = TRUE)
@@ -14,11 +15,15 @@ polyfill(coords, res = 7, is_geojson = TRUE)
 \method{polyfill}{data.frame}(coords, res = 7, is_geojson = TRUE)
 
 \method{polyfill}{list}(coords, res = 7, is_geojson = TRUE)
+
+\method{polyfill}{sf}(coords, res = 7, is_geojson = TRUE)
 }
 \arguments{
-\item{coords}{[lat, lng] point [vector, data.frame or sf object]}
+\item{coords}{numeric vector, matrix or data.frame with [lat, lng]
+or [lng, lat] pairs if \code{is_geojson = TRUE};
+object of class \code{sf} of type \code{POLYGON} or \code{MULTIPOLYGON}}
 
-\item{res}{resolution of hexagon to return}
+\item{res}{resolution; number between 0 and 15}
 
 \item{is_geojson}{expect [lng, lat] pairs instead of [lat, lng]?}
 }
@@ -28,20 +33,23 @@ Get all hexagons with centers contained in a given polygon
 \examples{
 library(sf)
 
-nc <- system.file("shape/nc.shp", package = "sf") \%>\%
-  st_read(quiet = TRUE)
-
-st_geometry(nc[1, ]) \%>\% plot()
-
-coords <- st_coordinates(nc[1, ])[, c("X", "Y")]
-polyfill(coords) \%>\% h3_to_geo_boundary() \%>\%
-  geo_boundary_to_sf() \%>\%
-  plot(add = TRUE)
-
-list(greater_manchester) \%>\% st_polygon() \%>\% st_sfc(crs = 4326) \%>\%
+list(greater_manchester) \%>\%
+  st_polygon() \%>\%
+  st_sfc(crs = 4326) \%>\%
   plot()
 
 polyfill(greater_manchester, 6) \%>\%
+  h3_to_geo_boundary() \%>\%
+  geo_boundary_to_sf() \%>\%
+  plot(add = TRUE)
+
+nc <- system.file("shape/nc.shp", package = "sf") \%>\%
+  st_read(quiet = TRUE)
+
+st_geometry(nc) \%>\%
+  plot(border = "red")
+
+polyfill(nc, 5) \%>\% unlist() \%>\%
   h3_to_geo_boundary() \%>\%
   geo_boundary_to_sf() \%>\%
   plot(add = TRUE)
