@@ -1,7 +1,12 @@
-#' Get hexagons containing [lat, lon] points
+## core functions
+
+#' Get all hexagons containing [lat, lng] points
 #'
-#' @param coords [lat, lng] points
-#' @param res resolution of hexagons to return
+#' @param coords numeric vector, matrix or data.frame with [lat, lng] pairs;
+#' object of class \code{sf} (geometry type: \code{POINT})
+#' @param res resolution of hexagons to return; number between 0 and 15
+#'
+#' @return H3 indexes; character vector
 #'
 #' @example inst/examples/api-reference/geo-to-h3.R
 #'
@@ -13,8 +18,14 @@ geo_to_h3 <- function(coords, res = 7) {
 
 #' @name geo_to_h3
 #' @export
-geo_to_h3.default <- function(coords, res = 7) {
+geo_to_h3.numeric <- function(coords, res = 7) {
   h3js_map("geoToH3", list(coords), res)
+}
+
+#' @name geo_to_h3
+#' @export
+geo_to_h3.matrix <- function(coords, res = 7) {
+  h3js_map("geoToH3", coords, res)
 }
 
 #' @name geo_to_h3

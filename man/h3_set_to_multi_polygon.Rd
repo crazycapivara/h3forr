@@ -2,7 +2,7 @@
 % Please edit documentation in R/h3_algorithms.R
 \name{h3_set_to_multi_polygon}
 \alias{h3_set_to_multi_polygon}
-\title{Get the outlines of a set of H3 hexagons}
+\title{Get the outlines of a set of hexagons}
 \usage{
 h3_set_to_multi_polygon(h3_index, format_as_geojson = TRUE)
 }
@@ -12,12 +12,11 @@ h3_set_to_multi_polygon(h3_index, format_as_geojson = TRUE)
 \item{format_as_geojson}{provide GeoJSON output: [lng, lat] and closed loops?}
 }
 \description{
-Returns GeoJSON MultiPolygon format
-(an array of polygons, each with an array of loops, each an array of coordinates).
-Coordinates are returned as [lat, lng] pairs unless GeoJSON is requested.
+Get the outlines of a set of hexagons
 }
 \examples{
 coords <- c(37.3615593, -122.0553238)
+
 geo_to_h3(coords) \%>\%
   k_ring(3) \%>\%
   h3_set_to_multi_polygon() \%>\%

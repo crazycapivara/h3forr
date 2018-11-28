@@ -1,5 +1,9 @@
+^data-raw$
+^docs$
+^_pkgdown\.yml$
 ^README\.Rmd$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 javascript/
 sandbox/
+tmp/

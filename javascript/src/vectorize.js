@@ -1,15 +1,15 @@
-var callThis = function(func_name, values, params) {
-  return h3[func_name].apply(null, values.concat(params));
+var callThis = function(funcName, data, params) {
+  return h3[funcName].apply(null, data.concat(params));
 };
 
-module.exports = function(func_name, x, params) {
+module.exports = function(funcName, x, params) {
   params = params || [];
   if (!Array.isArray(x)) {
-    return callThis(func_name, [x], params);
+    return callThis(funcName, [x], params);
   }
 
-  return x.map(function(values) {
-    values = Array.isArray(values) ? values : [values];
-    return callThis(func_name, values, params);
+  return x.map(function(data) {
+    data = Array.isArray(data) ? data : [data];
+    return callThis(funcName, data, params);
   });
 };

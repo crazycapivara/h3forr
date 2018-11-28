@@ -2,26 +2,33 @@
 % Please edit documentation in R/h3_geo-to-h3.R
 \name{geo_to_h3}
 \alias{geo_to_h3}
-\alias{geo_to_h3.default}
+\alias{geo_to_h3.numeric}
+\alias{geo_to_h3.matrix}
 \alias{geo_to_h3.data.frame}
 \alias{geo_to_h3.sf}
-\title{Get hexagons containing [lat, lon] points}
+\title{Get all hexagons containing [lat, lng] points}
 \usage{
 geo_to_h3(coords, res = 7)
 
-\method{geo_to_h3}{default}(coords, res = 7)
+\method{geo_to_h3}{numeric}(coords, res = 7)
+
+\method{geo_to_h3}{matrix}(coords, res = 7)
 
 \method{geo_to_h3}{data.frame}(coords, res = 7)
 
 \method{geo_to_h3}{sf}(coords, res = 7)
 }
 \arguments{
-\item{coords}{[lat, lng] points}
+\item{coords}{numeric vector, matrix or data.frame with [lat, lng] pairs;
+object of class \code{sf} (geometry type: \code{POINT})}
 
-\item{res}{resolution of hexagons to return}
+\item{res}{resolution of hexagons to return; number between 0 and 15}
+}
+\value{
+H3 indexes; character vector
 }
 \description{
-Get hexagons containing [lat, lon] points
+Get all hexagons containing [lat, lng] points
 }
 \examples{
 coords <- c(37.3615593, -122.0553238)
