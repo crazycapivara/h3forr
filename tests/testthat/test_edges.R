@@ -2,7 +2,7 @@ context("edges")
 
 test_that("valid, origin and destination", {
   # Prepare
-  h3_indexes = get_h3_indexes()
+  h3_indexes <- get_h3_indexes()
   origin <- h3_indexes[1]
   destination <- h3_indexes[2]
 
