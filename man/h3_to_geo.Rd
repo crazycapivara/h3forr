@@ -2,15 +2,19 @@
 % Please edit documentation in R/h3_h3-to-geo.R
 \name{h3_to_geo}
 \alias{h3_to_geo}
-\title{Get the [lat, lon] center of a given hexagon}
+\title{Get [lat, lon] centers of given hexagons}
 \usage{
 h3_to_geo(h3_index)
 }
 \arguments{
-\item{h3_index}{H3 index}
+\item{h3_index}{character vector representing H3 indexes}
+}
+\value{
+numeric vector: [lat, lng];
+matrix with [lat, lng] pairs if multiple indexes are supplied
 }
 \description{
-Get the [lat, lon] center of a given hexagon
+Get [lat, lon] centers of given hexagons
 }
 \examples{
 quakes[1:3, c("lat", "long")] \%>\%
