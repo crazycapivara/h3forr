@@ -5,7 +5,7 @@
 \alias{geo_to_sf.matrix}
 \alias{geo_to_sf.numeric}
 \alias{geo_to_sf.list}
-\title{Parse [lat, lng] points to sf object}
+\title{Parse [lat, lng] points to object of class \code{sf}}
 \usage{
 geo_to_sf(lat_lng_obj)
 
@@ -16,10 +16,15 @@ geo_to_sf(lat_lng_obj)
 \method{geo_to_sf}{list}(lat_lng_obj)
 }
 \arguments{
-\item{lat_lng_obj}{[lat, lng] points}
+\item{lat_lng_obj}{numeric vector or matrix with [lat, lng] points as returned
+from \link{h3_to_geo} or \link{h3_to_geo_boundary} with \code{format_as_geojson = FALSE};
+a list of matrices is also supported}
+}
+\value{
+object of class \code{sf} (geometry type: \code{POINT})
 }
 \description{
-Parse [lat, lng] points to sf object
+Parse [lat, lng] points to object of class \code{sf}
 }
 \examples{
 coords <- c(37.3615593, -122.0553238)

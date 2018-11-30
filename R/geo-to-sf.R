@@ -3,9 +3,13 @@ geo_to_sf_ <- function(lat_lng_obj) {
     sf::st_as_sf(coords = 2:1, crs = 4326)
 }
 
-#' Parse [lat, lng] points to sf object
+#' Parse [lat, lng] points to object of class \code{sf}
 #'
-#' @param lat_lng_obj [lat, lng] points
+#' @param lat_lng_obj numeric vector or matrix with [lat, lng] points as returned
+#' from \link{h3_to_geo} or \link{h3_to_geo_boundary} with \code{format_as_geojson = FALSE};
+#' a list of matrices is also supported
+#'
+#' @return object of class \code{sf} (geometry type: \code{POINT})
 #'
 #' @example inst/examples/api-reference/geo-to-sf.R
 #'
