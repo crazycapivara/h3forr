@@ -19,7 +19,7 @@ get_sample_h3_indexes <- function() {
   get_sample_h3_index() %>% k_ring()
 }
 
-#' Get sample h3 edge index
+#' Get sample H3 edge index
 #'
 #' @export
 get_sample_h3_edge_index <- function() {
