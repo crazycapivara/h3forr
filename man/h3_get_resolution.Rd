@@ -2,16 +2,16 @@
 % Please edit documentation in R/h3_core.R
 \name{h3_get_resolution}
 \alias{h3_get_resolution}
-\title{Get the resolution of an H3 index}
+\title{Get the resolution of a given H3 index}
 \usage{
 h3_get_resolution(h3_index)
 }
 \arguments{
-\item{h3_index}{H3 index [vector]}
+\item{h3_index}{character vector representing H3 indexes}
 }
 \value{
-numeric vector
+numeric vector with resolutions
 }
 \description{
-Get the resolution of an H3 index
+Get the resolution of a given H3 index
 }

@@ -7,7 +7,7 @@
 h3_is_valid(h3_index)
 }
 \arguments{
-\item{h3_index}{H3 index [vector]}
+\item{h3_index}{character vector representing H3 indexes}
 }
 \value{
 boolean vector

@@ -2,7 +2,7 @@
 
 #' Check whether a given string represents a valid H3 index
 #'
-#' @param h3_index H3 index [vector]
+#' @param h3_index character vector representing H3 indexes
 #'
 #' @return boolean vector
 #'
@@ -11,11 +11,11 @@ h3_is_valid <- function(h3_index) {
   h3js_map("h3IsValid", h3_index)
 }
 
-#' Get the resolution of an H3 index
+#' Get the resolution of a given H3 index
 #'
 #' @inheritParams h3_is_valid
 #'
-#' @return numeric vector
+#' @return numeric vector with resolutions
 #'
 #' @export
 h3_get_resolution <- function(h3_index) {
