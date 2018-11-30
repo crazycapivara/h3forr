@@ -2,18 +2,22 @@
 % Please edit documentation in R/h3_algorithms2.R
 \name{h3_to_children}
 \alias{h3_to_children}
-\title{Get the children/descendents of the given hexagon at a particular resolution}
+\title{Get the children/descendents of a given hexagon at a particular resolution}
 \usage{
 h3_to_children(h3_index, res = NULL)
 }
 \arguments{
-\item{h3_index}{H3 index [vector]}
+\item{h3_index}{character vector representing H3 indexes}
 
-\item{res}{resolution (if \code{NULL} the resolution will be set to
+\item{res}{resolution; if \code{NULL}, the resolution will be set to
 \code{h3_get_resolution(h3_index[1]) + 1}}
 }
+\value{
+H3 indexes; character vector or list of charactor vectors
+if multiple indexes are supplied
+}
 \description{
-Get the children/descendents of the given hexagon at a particular resolution
+Get the children/descendents of a given hexagon at a particular resolution
 }
 \examples{
 coords <- c(37.36156, -122.05532)
