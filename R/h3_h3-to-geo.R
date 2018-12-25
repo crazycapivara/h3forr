@@ -1,4 +1,4 @@
-#' Get [lat, lon] centers of given hexagons
+#' Get the [lat, lon] center of a given hexagon
 #'
 #' @param h3_index character vector representing H3 indexes
 #'

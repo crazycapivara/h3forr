@@ -2,7 +2,7 @@
 % Please edit documentation in R/h3_edges.R
 \name{get_h3_unidirectional_edge}
 \alias{get_h3_unidirectional_edge}
-\title{Get an H3 unidirectional edge index}
+\title{Get an H3 edge index for a given origin and destination H3 index}
 \usage{
 get_h3_unidirectional_edge(origin_h3_index, destination_h3_index)
 }
@@ -12,11 +12,8 @@ get_h3_unidirectional_edge(origin_h3_index, destination_h3_index)
 \item{destination_h3_index}{H3 index (destination) [single index]}
 }
 \value{
-H3 edge index vector
+character vector
 }
 \description{
-Get an H3 edge index for a given origin and destination H3 index.
-}
-\note{
-js pendant: \code{h3.getH3UnidirectionalEdge(origin, destination) => H3 edge index}
+Get an H3 edge index for a given origin and destination H3 index
 }
