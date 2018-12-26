@@ -7,13 +7,13 @@
 num_hexagons(res = 7)
 }
 \arguments{
-\item{res}{resolution between 0 and 15 [numeric vector]}
+\item{res}{resolution; numeric vector with values between 0 and 15}
 }
 \value{
 numeric vector
 }
 \description{
-js pendant: \code{h3.numHexagons(res) => number}
+Get the total count of hexagons in the world at a given resolution
 }
 \note{
 For resolutions above 8 the exact count cannot be represented in a JavaScript 32-bit number.

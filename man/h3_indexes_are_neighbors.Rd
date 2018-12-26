@@ -7,9 +7,9 @@
 h3_indexes_are_neighbors(origin_h3_index, destination_h3_index)
 }
 \arguments{
-\item{origin_h3_index}{H3 index (origin) [vector of indexes]}
+\item{origin_h3_index}{H3 index (origin); character vector}
 
-\item{destination_h3_index}{H3 index (destination) [single index]}
+\item{destination_h3_index}{H3 index (destination); character (single value)}
 }
 \value{
 boolean vector

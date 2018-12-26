@@ -7,7 +7,7 @@
 hex_area(res = 7, unit = "m2")
 }
 \arguments{
-\item{res}{resolution between 0 and 15 [numeric vector]}
+\item{res}{resolution; numeric vector with values between 0 and 15}
 
 \item{unit}{unit, either \code{m2} or \code{km2}}
 }
@@ -15,10 +15,9 @@ hex_area(res = 7, unit = "m2")
 numeric vector
 }
 \description{
-js pendant: \code{h3.hexArea(res, unit) => number}
+Get the average hexagon area at a given resolution
 }
 \examples{
 hex_area(1:4, unit = "km2")
-
 
 }
