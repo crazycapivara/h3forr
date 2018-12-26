@@ -38,3 +38,13 @@ count_h3 <- function(h3_index, to_sf = TRUE) {
   geo$count <- freq_tbl$n
   geo
 }
+
+### same as 'tibble::enframe(l, "idx", "h3_index") %>% tidyr::unnest()'
+list_to_df <- function(x, key = "idx", value = "value") {
+  result <- lapply(1:length(x), function(i) {
+    data.frame(key = i, value = l[[i]])
+  })
+  df <- do.call(rbind, result)
+  names(df) <- c(key, value)
+  df
+}
