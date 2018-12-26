@@ -12,12 +12,15 @@ test_that("valid, origin and destination", {
   this_origin <- get_origin_h3_index_from_unidirectional_edge(h3_edge_index)
   this_destination <- get_destination_h3_index_from_unidirectional_edge(h3_edge_index)
   index_pair <- get_h3_indexes_from_unidirectional_edge(h3_edge_index)
+  index_pairs <- get_h3_indexes_from_unidirectional_edge(rep(h3_edge_index, 2))
 
   # Assert
   expect_true(index_is_valid)
   expect_equal(this_origin, origin)
   expect_equal(this_destination, destination)
   expect_equal(index_pair, c(origin, destination))
+  expect_is(index_pair, "character")
+  expect_is(index_pairs, "matrix")
 })
 
 test_that("edges from hexagon", {
