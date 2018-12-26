@@ -13,7 +13,7 @@ h3_to_parent(h3_index, res = NULL)
 \code{h3_get_resolution(h3_index[1]) - 1}}
 }
 \value{
-H3 indexes
+character vector of H3 indexes
 }
 \description{
 Get the parent of a given hexagon at a particular resolution

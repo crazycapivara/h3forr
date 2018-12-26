@@ -10,7 +10,7 @@ h3_get_resolution(h3_index)
 \item{h3_index}{character vector representing H3 indexes}
 }
 \value{
-numeric vector with resolutions
+numeric vector of resolutions
 }
 \description{
 Get the resolution of a given H3 index

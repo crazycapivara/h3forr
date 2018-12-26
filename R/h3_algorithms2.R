@@ -4,7 +4,7 @@
 #' @param res resolution; if \code{NULL}, the resolution will be set to
 #' \code{h3_get_resolution(h3_index[1]) - 1}
 #'
-#' @return H3 indexes
+#' @return character vector of H3 indexes
 #'
 #' @example inst/examples/api-reference/h3-to-parent.R
 #'
@@ -21,7 +21,7 @@ h3_to_parent <- function(h3_index, res = NULL) {
 #' @param res resolution; if \code{NULL}, the resolution will be set to
 #' \code{h3_get_resolution(h3_index[1]) + 1}
 #'
-#' @return H3 indexes; character vector or list of charactor vectors
+#' @return character vector of H3 indexes; list of charactor vectors
 #' if multiple indexes are supplied
 #'
 #' @example inst/examples/api-reference/h3-to-children.R

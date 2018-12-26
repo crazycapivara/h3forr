@@ -13,7 +13,7 @@ h3_to_children(h3_index, res = NULL)
 \code{h3_get_resolution(h3_index[1]) + 1}}
 }
 \value{
-H3 indexes; character vector or list of charactor vectors
+character vector of H3 indexes; list of charactor vectors
 if multiple indexes are supplied
 }
 \description{

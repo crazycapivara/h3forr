@@ -15,7 +15,7 @@ h3_is_valid <- function(h3_index) {
 #'
 #' @inheritParams h3_is_valid
 #'
-#' @return numeric vector with resolutions
+#' @return numeric vector of resolutions
 #'
 #' @export
 h3_get_resolution <- function(h3_index) {
