@@ -10,7 +10,7 @@ get_h3_unidirectional_edges_from_hexagon(h3_index)
 \item{h3_index}{character vector representing H3 indexes}
 }
 \value{
-chraracter vector;
+chraracter vector representing H3 edge indexes;
 list of character vectors if multiple indexes are supplied
 }
 \description{

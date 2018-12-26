@@ -9,7 +9,7 @@ h3_unidirectional_edge_is_valid <- function(h3_edge_index) {
   h3js_map("h3UnidirectionalEdgeIsValid", h3_edge_index)
 }
 
-#' Get an H3 edge index for a given origin and destination H3 index
+#' Get an H3 edge index for a given origin and destination H3 (hexagon) index
 #'
 #' @inheritParams h3_distance
 #'
@@ -37,7 +37,7 @@ h3_indexes_are_neighbors <- function(origin_h3_index, destination_h3_index) {
 #'
 #' @inheritParams h3_unidirectional_edge_is_valid
 #'
-#' @return character vector
+#' @return character vector representing H3 edge indexes
 #'
 #' @export
 get_origin_h3_index_from_unidirectional_edge <- function(h3_edge_index) {
@@ -46,18 +46,21 @@ get_origin_h3_index_from_unidirectional_edge <- function(h3_edge_index) {
 
 #' Get the destination H3 (hexagon) index from an H3 edge index
 #'
-#' @inheritParams get_origin_h3_index_from_unidirectional_edge
+#' @inheritParams h3_unidirectional_edge_is_valid
 #'
-#' @return character vector
+#' @return character vector representing H3 edge indexes
 #'
 #' @export
 get_destination_h3_index_from_unidirectional_edge <- function(h3_edge_index) {
   h3js_map("getDestinationH3IndexFromUnidirectionalEdge", h3_edge_index)
 }
 
-#' Get the H3 [origin, destination] index pair from an H3 edge index
+#' Get the H3 [origin, destination] (hexagon) index pair from an H3 edge index
 #'
-#' @inheritParams get_origin_h3_index_from_unidirectional_edge
+#' @inheritParams h3_unidirectional_edge_is_valid
+#'
+#' @return character vector; matrix of [origin, destination] hexagon index pairs
+#' if multiple edge indexes are supplied
 #'
 #' @export
 get_h3_indexes_from_unidirectional_edge <- function(h3_edge_index) {

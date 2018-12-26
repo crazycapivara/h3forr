@@ -10,7 +10,7 @@ get_destination_h3_index_from_unidirectional_edge(h3_edge_index)
 \item{h3_edge_index}{character vector representing H3 edge indexes}
 }
 \value{
-character vector
+character vector representing H3 edge indexes
 }
 \description{
 Get the destination H3 (hexagon) index from an H3 edge index
