@@ -68,7 +68,7 @@ get_h3_indexes_from_unidirectional_edge <- function(h3_edge_index) {
 #'
 #' @inheritParams h3_to_geo
 #'
-#' @return chraracter vector;
+#' @return chraracter vector representing H3 edge indexes;
 #' list of character vectors if multiple indexes are supplied
 #'
 #' @examples
@@ -77,12 +77,11 @@ get_h3_indexes_from_unidirectional_edge <- function(h3_edge_index) {
 #'   h3_unidirectional_edge_is_valid()
 #'
 #' @export
-### TODO: rename 'res' to 'result'
 get_h3_unidirectional_edges_from_hexagon <- function(h3_index) {
-  res <- h3js_map("getH3UnidirectionalEdgesFromHexagon", h3_index)
-  if (is.array(res)) res %<>% purrr::array_tree(1)
+  result <- h3js_map("getH3UnidirectionalEdgesFromHexagon", h3_index)
+  if (is.array(result)) result %<>% purrr::array_tree(1)
 
-  res
+  result
 }
 
 #' Get the vertices of a given edge as an array of [lat, lng] points
@@ -90,10 +89,11 @@ get_h3_unidirectional_edges_from_hexagon <- function(h3_index) {
 #' @note Edges that cross the edge of an icosahedron face may return 3 coordinates.
 #'
 #' @inheritParams h3_unidirectional_edge_is_valid
-#' @inheritParams h3_to_geo_boundary
+#' @param format_as_geojson whether to return [lng, lat] points instead of of [lat, lng]
+#'
+#' @return numeric matrix (2x2); list of matrices if multiple indexes are supplied
 #'
 #' @export
-### TODO: Rename 'res' to 'result'
 get_h3_unidirectional_edge_boundary <- function(h3_edge_index, format_as_geojson = TRUE) {
   result <- h3js_map("getH3UnidirectionalEdgeBoundary", h3_edge_index, format_as_geojson)
   if (!is.matrix(result)) result %<>% purrr::array_tree(1)

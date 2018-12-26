@@ -20,6 +20,22 @@ test_that("valid, origin and destination", {
   expect_equal(index_pair, c(origin, destination))
 })
 
+test_that("edges from hexagon", {
+  # Prepare
+  h3_index <- get_sample_h3_index()
+  h3_indexes <- get_sample_h3_indexes()
+
+  # Act
+  edges <- get_h3_unidirectional_edges_from_hexagon(h3_index)
+  multiple_edge_objects <- get_h3_unidirectional_edges_from_hexagon(h3_indexes)
+
+  # Assert
+  expect_length(edges, 6)
+  expect_is(edges, "character")
+  expect_length(multiple_edge_objects, 7)
+  expect_is(multiple_edge_objects, "list")
+})
+
 test_that("unidirectional edge boundary", {
   # Prepare
   h3_edge_index <- get_sample_h3_edge_index()
