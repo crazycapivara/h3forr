@@ -95,10 +95,10 @@ get_h3_unidirectional_edges_from_hexagon <- function(h3_index) {
 #' @export
 ### TODO: Rename 'res' to 'result'
 get_h3_unidirectional_edge_boundary <- function(h3_edge_index, format_as_geojson = TRUE) {
-  res <- h3js_map("getH3UnidirectionalEdgeBoundary", h3_edge_index, format_as_geojson)
-  if (!is.matrix(res)) res %<>% purrr::array_tree(1)
+  result <- h3js_map("getH3UnidirectionalEdgeBoundary", h3_edge_index, format_as_geojson)
+  if (!is.matrix(result)) result %<>% purrr::array_tree(1)
 
-  if (format_as_geojson) res %<>% h3forr_class(pkg_env$h3forr_classes$lat_lng)
+  if (format_as_geojson) result %<>% h3forr_class(pkg_env$h3forr_classes$lat_lng)
 
-  res
+  result
 }
