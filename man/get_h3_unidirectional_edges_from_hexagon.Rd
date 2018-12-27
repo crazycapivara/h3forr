@@ -7,13 +7,14 @@
 get_h3_unidirectional_edges_from_hexagon(h3_index)
 }
 \arguments{
-\item{h3_index}{H3 index [vector]}
+\item{h3_index}{character vector representing H3 indexes}
 }
 \value{
-H3 edge index vector or list of H3 edge index vectors
+chraracter vector representing H3 edge indexes;
+list of character vectors if multiple indexes are supplied
 }
 \description{
-js pendant: \code{h3.getH3UnidirectionalEdgesFromHexagon(h3Index) => Array.<H3EdgeIndex>}
+Get all unidirectional edges for a given H3 index (an edge to every neighbor)
 }
 \examples{
 get_sample_h3_index() \%>\%

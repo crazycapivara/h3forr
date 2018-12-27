@@ -2,20 +2,20 @@
 % Please edit documentation in R/h3_info.R
 \name{h3_distance}
 \alias{h3_distance}
-\title{Get the grid distance between two hex indexes}
+\title{Get the grid distance between two H3 (hexagon) indexes}
 \usage{
 h3_distance(origin_h3_index, destination_h3_index)
 }
 \arguments{
-\item{origin_h3_index}{H3 index (origin) [vector of indexes]}
+\item{origin_h3_index}{H3 index (origin); character vector}
 
-\item{destination_h3_index}{H3 index (destination) [single index]}
+\item{destination_h3_index}{H3 index (destination); character (single value)}
 }
 \value{
 numeric vector
 }
 \description{
-js pendant: \code{h3.h3Distance(origin, destination) => number}
+Get the grid distance between two H3 (hexagon) indexes
 }
 \note{
 This function may fail to find the distance between two indexes
@@ -26,5 +26,6 @@ coords <- c(37.36156, -122.05532)
 
 h3_index <- geo_to_h3(coords)
 neighbors <- k_ring(h3_index, 2)
+
 h3_distance(neighbors, h3_index)
 }

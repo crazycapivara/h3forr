@@ -1,0 +1,25 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+sudo: required
+cache: packages
+dist: trusty
+latex: false
+
+addons:
+  apt:
+    sources:
+      - sourceline: "ppa:ubuntugis/ppa"
+      - sourceline: "ppa:opencpu/jq"
+    packages:
+      - libudunits2-dev
+      - libproj-dev
+      - libgeos-dev
+      - libgdal-dev
+      - libv8-dev
+      - libprotobuf-dev
+      - protobuf-compiler
+      - libjq-dev
+
+before_install:
+  - sudo ldconfig

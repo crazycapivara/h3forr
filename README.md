@@ -3,6 +3,8 @@
 h3forr
 ======
 
+[![Travis build status](https://travis-ci.org/crazycapivara/h3forr.svg?branch=master)](https://travis-ci.org/crazycapivara/h3forr) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
 
 ![](man/figures/README-road-safety.png)
