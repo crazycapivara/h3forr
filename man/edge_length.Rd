@@ -7,7 +7,7 @@
 edge_length(res = 7, unit = "m")
 }
 \arguments{
-\item{res}{resolution between 0 and 15 [numeric vector]}
+\item{res}{resolution; numeric vector with values between 0 and 15}
 
 \item{unit}{unit, either \code{m} for meters or \code{km} for kilometers}
 }
@@ -15,7 +15,7 @@ edge_length(res = 7, unit = "m")
 numeric vector
 }
 \description{
-js pendant: \code{h3.edgeLength(res, unit) => number}
+Get the average hexagon edge length at a given resolution
 }
 \examples{
 edge_length(1:4, unit = "km")

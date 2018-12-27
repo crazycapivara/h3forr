@@ -2,13 +2,17 @@
 % Please edit documentation in R/h3_edges.R
 \name{get_h3_indexes_from_unidirectional_edge}
 \alias{get_h3_indexes_from_unidirectional_edge}
-\title{Get the H3 [origin, destination] index pair from an H3 edge index}
+\title{Get the H3 [origin, destination] (hexagon) index pair from an H3 edge index}
 \usage{
 get_h3_indexes_from_unidirectional_edge(h3_edge_index)
 }
 \arguments{
-\item{h3_edge_index}{H3 edge index [vector]}
+\item{h3_edge_index}{character vector representing H3 edge indexes}
+}
+\value{
+character vector; matrix of [origin, destination] hexagon index pairs
+if multiple edge indexes are supplied
 }
 \description{
-Get the H3 [origin, destination] index pair from an H3 edge index
+Get the H3 [origin, destination] (hexagon) index pair from an H3 edge index
 }

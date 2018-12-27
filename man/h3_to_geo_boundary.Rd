@@ -7,11 +7,19 @@
 h3_to_geo_boundary(h3_index, format_as_geojson = TRUE)
 }
 \arguments{
-\item{h3_index}{h3 index}
+\item{h3_index}{character vector representing H3 indexes}
 
 \item{format_as_geojson}{provide GeoJSON output: [lng, lat] and closed loops?}
 }
+\value{
+matrix with [lat, lng] or [lng, lat] points if \code{format_as_geojson = TRUE};
+Furthermore, GeoJSON format returns closed loops; list of matrices if multiple indexes
+are supplied
+}
 \description{
-Returns the vertices either as an array of [lat, lng] points
-or as GeoJSON output: [lng, lat] and closed loops.
+Get the vertices of a given hexagon (or pentagon) either as an array of [lat, lng] points
+or as GeoJSON output: [lng, lat] points and closed loops.
+}
+\seealso{
+\link{geo_boundary_to_sf} and \link{geo_to_sf}
 }

@@ -19,7 +19,7 @@ get_sample_h3_indexes <- function() {
   get_sample_h3_index() %>% k_ring()
 }
 
-#' Get sample h3 edge index
+#' Get sample H3 edge index
 #'
 #' @export
 get_sample_h3_edge_index <- function() {
@@ -37,4 +37,14 @@ count_h3 <- function(h3_index, to_sf = TRUE) {
     geo_boundary_to_sf()
   geo$count <- freq_tbl$n
   geo
+}
+
+### same as 'tibble::enframe(l, "idx", "h3_index") %>% tidyr::unnest()'
+list_to_df <- function(x, key = "idx", value = "value") {
+  result <- lapply(1:length(x), function(i) {
+    data.frame(key = i, value = x[[i]])
+  })
+  df <- do.call(rbind, result)
+  names(df) <- c(key, value)
+  df
 }

@@ -2,19 +2,16 @@
 % Please edit documentation in R/h3_edges.R
 \name{h3_unidirectional_edge_is_valid}
 \alias{h3_unidirectional_edge_is_valid}
-\title{Check whether a given string represents a valid unidirectional edge}
+\title{Check whether a given string represents a valid unidirectional edge index}
 \usage{
 h3_unidirectional_edge_is_valid(h3_edge_index)
 }
 \arguments{
-\item{h3_edge_index}{H3 edge index [vector]}
+\item{h3_edge_index}{character vector representing H3 edge indexes}
 }
 \value{
 boolean vector
 }
 \description{
-Check whether a given string represents a valid unidirectional edge
-}
-\note{
-js pendant: \code{h3.h3UnidirectionalEdgeIsValid(edgeIndex) => boolean}
+Check whether a given string represents a valid unidirectional edge index
 }

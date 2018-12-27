@@ -7,11 +7,11 @@
 get_destination_h3_index_from_unidirectional_edge(h3_edge_index)
 }
 \arguments{
-\item{h3_edge_index}{H3 edge index [vector]}
+\item{h3_edge_index}{character vector representing H3 edge indexes}
 }
 \value{
-H3 index vector
+character vector representing H3 edge indexes
 }
 \description{
-js pendant: \code{h3.getDestinationH3IndexFromUnidirectionalEdge(edgeIndex) => H3 index}
+Get the destination H3 (hexagon) index from an H3 edge index
 }

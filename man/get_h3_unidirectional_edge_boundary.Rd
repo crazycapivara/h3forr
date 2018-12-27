@@ -8,9 +8,12 @@ get_h3_unidirectional_edge_boundary(h3_edge_index,
   format_as_geojson = TRUE)
 }
 \arguments{
-\item{h3_edge_index}{H3 edge index [character vector]}
+\item{h3_edge_index}{character vector representing H3 edge indexes}
 
-\item{format_as_geojson}{provide GeoJSON output: [lng, lat] and closed loops?}
+\item{format_as_geojson}{whether to return [lng, lat] points instead of of [lat, lng]}
+}
+\value{
+numeric matrix (2x2); list of matrices if multiple indexes are supplied
 }
 \description{
 Get the vertices of a given edge as an array of [lat, lng] points

@@ -7,7 +7,7 @@
 h3_set_to_multi_polygon(h3_index, format_as_geojson = TRUE)
 }
 \arguments{
-\item{h3_index}{h3 index}
+\item{h3_index}{character vector representing H3 indexes}
 
 \item{format_as_geojson}{provide GeoJSON output: [lng, lat] and closed loops?}
 }
