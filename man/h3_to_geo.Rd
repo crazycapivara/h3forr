@@ -17,7 +17,10 @@ matrix with [lat, lng] pairs if multiple indexes are supplied
 Get the [lat, lon] center of a given hexagon
 }
 \examples{
-quakes[1:3, c("lat", "long")] \%>\%
+mtx_geo <- road_safety_greater_manchester[1:5, ] \%>\%
   geo_to_h3() \%>\%
   h3_to_geo()
+
+mtx_geo \%>\%
+  geo_to_sf()
 }
