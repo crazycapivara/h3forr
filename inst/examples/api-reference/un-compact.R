@@ -1,3 +1,5 @@
+library(sf)
+
 # helper
 plot_this <- function(h3_indexes, color = "blue", add = FALSE) {
   h3_to_geo_boundary(h3_indexes) %>%

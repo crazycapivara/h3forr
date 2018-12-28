@@ -18,6 +18,8 @@ Compact a set of hexagons of the same resolution into a set of hexagons
 across multiple levels that represents the same area
 }
 \examples{
+library(sf)
+
 # helper
 plot_this <- function(h3_indexes, color = "blue", add = FALSE) {
   h3_to_geo_boundary(h3_indexes) \%>\%

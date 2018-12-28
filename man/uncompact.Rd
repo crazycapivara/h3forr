@@ -9,7 +9,7 @@ uncompact(h3_index, res = 7)
 \arguments{
 \item{h3_index}{character vector representing H3 indexes}
 
-\item{resolution}{resolution to uncompact to; number between 0 and 15}
+\item{res}{resolution to uncompact to; number between 0 and 15}
 }
 \value{
 character vector of H3 indexes;

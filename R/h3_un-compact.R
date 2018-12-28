@@ -15,7 +15,7 @@ compact <- function(h3_index) {
 #' Uncompact a compacted set of hexagons to hexagons of the same resolution
 #'
 #' @inheritParams h3_is_valid
-#' @param resolution resolution to uncompact to; number between 0 and 15
+#' @param res resolution to uncompact to; number between 0 and 15
 #'
 #' @seealso \code{\link{compact}}
 #'
