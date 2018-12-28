@@ -2,19 +2,29 @@
 % Please edit documentation in R/custom_utils.R
 \name{hexbins}
 \alias{hexbins}
-\title{Get hexbins}
+\alias{hexbins.sf}
+\alias{hexbins.data.frame}
+\title{Get hexbins for given points and resolution}
 \usage{
-hexbins(data, res = 7, lat = "lat", lng = "lng")
+hexbins(data, res = 7, ...)
+
+\method{hexbins}{sf}(data, res = 7, ...)
+
+\method{hexbins}{data.frame}(data, res = 7, ..., lat = "lat",
+  lng = "lng")
 }
 \arguments{
-\item{data}{matrix, data frame or \code{sf} object}
+\item{data}{matrix, data frame (with latidude and longitude columns)
+or object of class \code{sf} (\code{POINT} geometry)}
 
 \item{res}{resolution of hexagons to return; number between 0 and 15}
 
-\item{lat}{name of latitude column if matrix or data frame is supplied}
+\item{...}{ignored}
 
-\item{lng}{name of longitude column if matrix or data frame is supplied}
+\item{lat}{name of latitude column}
+
+\item{lng}{name of longitude column}
 }
 \description{
-Get hexbins
+Get hexbins for given points and resolution
 }
