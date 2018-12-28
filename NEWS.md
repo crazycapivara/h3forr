@@ -1,3 +1,13 @@
+# h3forr 0.1.4
+
+* Added `greater_manchester` and `road_safety_greater_manchester` datasets
+* Added S3 methods (`data.frame`, `matrix`, `sf`) for `polyfill`
+* Vectorized `polyfill`
+* Added tests for more or less all functions
+* Updated r-docs
+* Added CI (travis)
+* Added functions `h3_is_pentagon`, `h3_is_res_class_iii` and `h3_get_base_cell`
+
 # h3forr 0.1.3
 
 * Added `manhattan` dataset
