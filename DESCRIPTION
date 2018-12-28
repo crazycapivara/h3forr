@@ -17,6 +17,7 @@ Imports:
   tibble
 Suggests:
   sf,
+  leaflet,
   testthat
 Encoding: UTF-8
 LazyData: true
