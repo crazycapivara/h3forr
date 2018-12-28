@@ -7,7 +7,8 @@
 #' @export
 h3_set_to_multi_polygon <- function(h3_index, format_as_geojson = TRUE) {
   result <- h3js("h3SetToMultiPolygon", h3_index, format_as_geojson) %>%
-    as.vector() %>% matrix(ncol = 2)
+    as.vector() %>%
+    matrix(ncol = 2)
   if (format_as_geojson) result %<>% h3forr_class("lng_lat_closed")
 
   result

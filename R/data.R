@@ -17,7 +17,7 @@ NULL
 #'
 #' Coordinates describing the polygon of greater manchester
 #'
-#'@format a matrix with 216 rows and 2 columns:
+#' @format a matrix with 216 rows and 2 columns:
 #' \describe{
 #'   \item{lng}{longitude}
 #'   \item{lat}{latitude}
