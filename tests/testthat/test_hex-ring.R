@@ -12,4 +12,3 @@ test_that("Single center", {
   expect_length(h3_indexes, 12)
   expect_is(h3_indexes, "character")
 })
-
