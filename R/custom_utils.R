@@ -27,6 +27,7 @@ get_sample_h3_edge_index <- function() {
   get_h3_unidirectional_edge(indexes[1], indexes[2])
 }
 
+### TODO: obsolte, remove!
 count_h3_obs <- function(h3_index, to_sf = TRUE) {
   freq_tbl <- table(h3_index) %>%
     # as.data.frame(responseName = "count") %>%
