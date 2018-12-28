@@ -20,6 +20,8 @@ count_h3 <- function(h3_indexes) {
 #' or object of class \code{sf} (\code{POINT} geometry)
 #' @param ... ignored
 #'
+#' @example inst/examples/api-reference/hexbins.R
+#'
 #' @name hexbins
 #' @export
 hexbins <- function(data, res = 7, ...) {
