@@ -16,8 +16,15 @@ test_that("compact", {
 
 test_that("uncompact", {
   # Prepare
+  resolution <- 7
+  h3_indexes <- get_sample_h3_index() %>% k_ring(4)
+  h3_indexes_compact <- compact(h3_indexes)
 
   # Act
+  h3_indexes_uncompact <- uncompact(h3_indexes_compact, res = resolution)
+  resolutions <- h3_get_resolution(h3_indexes_uncompact) %>% unique()
 
   # Assert
+  expect_length(h3_indexes_uncompact, 61)
+  expect_equal(resolutions, 7)
 })
