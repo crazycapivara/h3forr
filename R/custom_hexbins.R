@@ -1,16 +1,19 @@
+### workaround because cbind for sf does some weird things
+### and 'sf:::cbind.sf' is not exported
+### moreover, I do not want to have a 'dplyr' dependency at the moment
+cbind_sf <- function(sf_obj, df) {
+  sf_obj[, colnames(df)] <- df
+  sf_obj
+}
+
 ### TODO: export?
-count_h3 <- function(h3_indexes) {
-  column_names <- c("h3_index", "count")
-
-  h3_index_tbl <- table(h3_indexes) %>%
-    tibble::as_tibble()
-  colnames(h3_index_tbl) <- column_names
-
+count_h3 <- function(h3_index) {
+  h3_index_tbl <- table(h3_index) %>%
+    tibble::as_tibble(n = "count")
   hexagons <- h3_to_geo_boundary(h3_index_tbl$h3_index) %>%
     geo_boundary_to_sf()
-  hexagons[, column_names] <- h3_index_tbl
-
-  hexagons
+  # sf:::cbind.sf(hexagons, h3_index_tbl)
+  cbind_sf(hexagons, h3_index_tbl)
 }
 
 #' Get hexbins for given points and resolution
