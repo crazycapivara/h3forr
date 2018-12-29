@@ -1,6 +1,7 @@
-### workaround because cbind for sf does some weird things
+### workaround because 'cbind' does some weird things for 'sf' objects
 ### and 'sf:::cbind.sf' is not exported
-### moreover, I do not want to have a 'dplyr' dependency at the moment
+### 'dplyr::bind_cols' works but I do not want to have a 'dplyr' dependency
+### at the moment
 cbind_sf <- function(sf_obj, df) {
   sf_obj[, colnames(df)] <- df
   sf_obj
@@ -34,15 +35,9 @@ hexbins <- function(data, res = 7, ...) {
 #' @name hexbins
 #' @export
 hexbins.sf <- function(data, res = 7, ...) {
-  h3_indexes <- geo_to_h3(data, res)
-  data$h3_index <- h3_indexes
-
-  hexagons <- count_h3(h3_indexes)
-
-  list(
-    hexagons = hexagons,
-    data = data
-  )
+  data$h3_index <- geo_to_h3(data, res)
+  hexagons <- count_h3(data$h3_index)
+  list(hexagons = hexagons, data = data)
 }
 
 #' @param lat name of latitude column
@@ -50,14 +45,14 @@ hexbins.sf <- function(data, res = 7, ...) {
 #'
 #' @name hexbins
 #' @export
-hexbins.data.frame <- function(data, res = 7, ..., lat = "lat", lng = "lng") {
+hexbins.data.frame <- function(data, res = 7, lat = "lat", lng = "lng", ...) {
   sf::st_as_sf(data, coords = c(lng, lat), crs = 4326) %>%
     hexbins(res)
 }
 
 #' @name hexbins
 #' @export
-hexbins.matrix <- function(data, res = 7, ..., lat = "lat", lng = "lng") {
+hexbins.matrix <- function(data, res = 7, lat = "lat", lng = "lng", ...) {
   as.data.frame(data) %>%
     hexbins(res, lat = lat, lng = lng)
 }

@@ -11,11 +11,11 @@ hexbins(data, res = 7, ...)
 
 \method{hexbins}{sf}(data, res = 7, ...)
 
-\method{hexbins}{data.frame}(data, res = 7, ..., lat = "lat",
-  lng = "lng")
+\method{hexbins}{data.frame}(data, res = 7, lat = "lat", lng = "lng",
+  ...)
 
-\method{hexbins}{matrix}(data, res = 7, ..., lat = "lat",
-  lng = "lng")
+\method{hexbins}{matrix}(data, res = 7, lat = "lat", lng = "lng",
+  ...)
 }
 \arguments{
 \item{data}{matrix, data frame (with latidude and longitude columns)
