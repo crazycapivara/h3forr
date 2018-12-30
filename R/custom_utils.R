@@ -41,6 +41,7 @@ count_h3_obs <- function(h3_index, to_sf = TRUE) {
 }
 
 ### same as 'tibble::enframe(l, "idx", "h3_index") %>% tidyr::unnest()'
+### see below
 list_to_df <- function(x, key = "idx", value = "value") {
   result <- lapply(1:length(x), function(i) {
     data.frame(key = i, value = x[[i]])
@@ -48,4 +49,9 @@ list_to_df <- function(x, key = "idx", value = "value") {
   df <- do.call(rbind, result)
   names(df) <- c(key, value)
   df
+}
+
+h3forr_unnest <- function(x, ...) {
+  tibble::enframe(x, ...) %>%
+    tidyr::unnest()
 }
