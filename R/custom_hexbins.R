@@ -37,7 +37,8 @@ hexbins <- function(data, res = 7, ...) {
 hexbins.sf <- function(data, res = 7, ...) {
   data$h3_index <- geo_to_h3(data, res)
   hexagons <- count_h3(data$h3_index)
-  list(hexagons = hexagons, data = data)
+  list(hexagons = hexagons, data = data) %>%
+    h3forr_class("h3forr_hexbins")
 }
 
 #' @param lat name of latitude column
@@ -55,4 +56,13 @@ hexbins.data.frame <- function(data, res = 7, lat = "lat", lng = "lng", ...) {
 hexbins.matrix <- function(data, res = 7, lat = "lat", lng = "lng", ...) {
   as.data.frame(data) %>%
     hexbins(res, lat = lat, lng = lng)
+}
+
+#' @export
+`[.h3forr_hexbins` <- function(x, i, ...) {
+  # x$data[i, ...]
+  if (inherits(i, "character")) {
+    return(x$data[x$data$h3_index %in% i, ])
+  }
+  x$data[x$data$h3_index %in% x$hexagons$h3_index[i], ]
 }
