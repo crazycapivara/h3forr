@@ -7,11 +7,12 @@
 buffer_points_linear(points, radius = 2, res = 8)
 }
 \arguments{
-\item{points}{object of class \code{sf} with \code{POINT} geometry}
+\item{points}{matrix, data frame
+or object of class \code{sf} with \code{POINT} geometry}
 
 \item{radius}{number of rings (used as buffer around points)}
 
-\item{res}{resollution of hexagons to return}
+\item{res}{resolution of hexagons to return}
 }
 \description{
 Buffer points linear
