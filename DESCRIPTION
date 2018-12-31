@@ -14,9 +14,11 @@ Imports:
   V8,
   magrittr,
   purrr,
-  tibble
+  tibble,
+  scales
 Suggests:
   sf,
+  tidyr,
   leaflet,
   testthat
 Encoding: UTF-8
