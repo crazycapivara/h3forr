@@ -19,6 +19,19 @@ hex$weight <- 1 - hex$distance * step
 hex <- hex[, .(weight = sum(weight)), .(h3_index)]
 hex$norm <- rescale(hex$weight, c(0, 1))
 
+# as function
+buffer_points <- function(points, .f, res = 8, radius = 2) {
+  result <- geo_to_h3(points, res = res) %>%
+    k_ring_distances(radius) %>%
+    purrr::reduce(rbind) %>%
+    data.table::as.data.table()
+  result$weight <- .f(result$distance, radius)
+  result <- result[, .(weight = sum(weight)), .(h3_index)]
+  result$norm <- scales::rescale(result$weight, c(0, 1))
+  # result[, norm := scales::rescale(weight, c(0, 1))]
+  result
+}
+
 ### this should already be done in k_ring_distancesm (done! see above)
 x <- geo_to_h3(bart_stations, res = 8) %>%
   k_ring_distances(radius) %>%
