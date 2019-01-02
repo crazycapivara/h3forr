@@ -16,8 +16,14 @@ hex <- geo_to_h3(bart_stations, res = 8) %>%
 
 step <- 1 / (radius + 1)
 hex$weight <- 1 - hex$distance * step
+
 hex <- hex[, .(weight = sum(weight)), .(h3_index)]
 hex$norm <- rescale(hex$weight, c(0, 1))
+
+# same as above using dplyr
+dplyr::group_by(hex, h3_index) %>%
+  dplyr::summarise("weight" = sum(weight)) %>%
+  dplyr::mutate(norm = rescale(weight, c (0, 1)))
 
 # as function
 buffer_points <- function(points, .f, res = 8, radius = 2) {
