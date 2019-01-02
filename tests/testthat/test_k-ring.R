@@ -44,3 +44,17 @@ test_that("ordered by distance: single center", {
   # expect_length(neighbors, 3)
   # expect_equal(neighbors[[1]], origin)
 })
+
+test_that("ordered by distance: multiple centers", {
+  # Prepare
+  origins <- get_sample_h3_indexes()
+
+  # Act
+  neighbors <- k_ring_distances(origins, 2)
+
+  # Assert
+  expect_is(neighbors, "list")
+  expect_is(neighbors[[1]], "data.frame")
+  expect_length(neighbors, 7)
+  expect_equal(neighbors[[1]]$h3_index[1], origins[1])
+})
