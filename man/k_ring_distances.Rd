@@ -12,12 +12,12 @@ k_ring_distances(h3_index, ring_size = 1)
 \item{ring_size}{number of rings}
 }
 \value{
-H3 indexes; list of character vectors ordered by distance (ring number);
-list of lists if multiple centers are supplied
+data frame with columns \emph{h3_index} and \emph{distance} (ring number);
+list of data frames if multiple centers are supplied
 }
 \description{
 Get all hexagons in a k-ring around a given center
-as a list of vectors ordered by distance from the origin.
+ordered by distance from the origin.
 }
 \note{
 The order of the hexagons within each ring is undefined.
