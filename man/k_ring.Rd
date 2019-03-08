@@ -12,7 +12,8 @@ k_ring(h3_index, ring_size = 1)
 \item{ring_size}{number of rings}
 }
 \value{
-H3 indexes; list of character vectors if multiple centers are supplied
+character vector of H3 indexes;
+list of character vectors if multiple centers are supplied
 }
 \description{
 Get all hexagons in a k-ring around a given center

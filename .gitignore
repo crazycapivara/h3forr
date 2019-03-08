@@ -4,4 +4,4 @@
 .Ruserdata
 node_modules/
 tmp/
-
+.V8history

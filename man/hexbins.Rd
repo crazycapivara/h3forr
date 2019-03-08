@@ -11,11 +11,11 @@ hexbins(data, res = 7, ...)
 
 \method{hexbins}{sf}(data, res = 7, ...)
 
-\method{hexbins}{data.frame}(data, res = 7, ..., lat = "lat",
-  lng = "lng")
+\method{hexbins}{data.frame}(data, res = 7, lat = "lat", lng = "lng",
+  ...)
 
-\method{hexbins}{matrix}(data, res = 7, ..., lat = "lat",
-  lng = "lng")
+\method{hexbins}{matrix}(data, res = 7, lat = "lat", lng = "lng",
+  ...)
 }
 \arguments{
 \item{data}{matrix, data frame (with latidude and longitude columns)
@@ -36,7 +36,6 @@ Get hexbins for given points and resolution
 library(leaflet)
 
 result <- hexbins(road_safety_greater_manchester)
-centers <- result$hexagons$h3_index \%>\% h3_to_geo() \%>\% geo_to_sf()
 
 pal <- colorBin("YlOrRd", domain = result$hexagons$count)
 
@@ -47,15 +46,8 @@ map <- leaflet(data = result$hexagons) \%>\%
     color = "white",
     fillColor = ~ pal(count),
     fillOpacity = 0.8,
-    popup = ~ sprintf("\%i accidents", count)
-  ) \%>\%
-  addCircleMarkers(
-    data =  centers,
-    label = result$hexagons$h3_index,
-    radius = 5,
-    stroke = FALSE,
-    fillColor = "blue",
-    fillOpacity = 0.5
+    label = ~ sprintf("\%i accidents", count),
+    popup = result$hexagons$h3_index
   )
 
 if (interactive()) map
