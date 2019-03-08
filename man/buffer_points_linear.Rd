@@ -15,7 +15,7 @@ or object of class \code{sf} with \code{POINT} geometry}
 \item{res}{resolution of hexagons to return}
 }
 \description{
-Buffer points linear
+Weight is calculated as \code{1 - distance / (1 + radius)}.
 }
 \examples{
 library(sf)

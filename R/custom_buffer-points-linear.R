@@ -16,6 +16,8 @@ get_coords.sf <- function(points) {
 
 #' Buffer points linear
 #'
+#' Weight is calculated as \code{1 - distance / (1 + radius)}.
+#'
 #' @param points matrix, data frame
 #' or object of class \code{sf} with \code{POINT} geometry
 #' @param radius number of rings (used as buffer around points)

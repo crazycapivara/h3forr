@@ -12,7 +12,12 @@ radius <- 2
 hex <- geo_to_h3(bart_stations, res = 8) %>%
   k_ring_distances(radius) %>%
   reduce(rbind) %>%
-  as.data.table()
+  mutate(weight = 1 - distance * step) %>%
+  group_by(h3_index) %>%
+  dplyr::summarise(weight = sum(weight)) %>%
+  mutate(norm = rescale(weight, c(0, 1)))
+
+# %>% as.data.table()
 
 step <- 1 / (radius + 1)
 hex$weight <- 1 - hex$distance * step
