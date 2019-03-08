@@ -27,7 +27,8 @@ get_sample_h3_edge_index <- function() {
   get_h3_unidirectional_edge(indexes[1], indexes[2])
 }
 
-count_h3 <- function(h3_index, to_sf = TRUE) {
+### TODO: obsolte, remove!
+count_h3_obs <- function(h3_index, to_sf = TRUE) {
   freq_tbl <- table(h3_index) %>%
     # as.data.frame(responseName = "count") %>%
     tibble::as_tibble()
@@ -40,6 +41,7 @@ count_h3 <- function(h3_index, to_sf = TRUE) {
 }
 
 ### same as 'tibble::enframe(l, "idx", "h3_index") %>% tidyr::unnest()'
+### see below
 list_to_df <- function(x, key = "idx", value = "value") {
   result <- lapply(1:length(x), function(i) {
     data.frame(key = i, value = x[[i]])
@@ -47,4 +49,9 @@ list_to_df <- function(x, key = "idx", value = "value") {
   df <- do.call(rbind, result)
   names(df) <- c(key, value)
   df
+}
+
+h3forr_unnest <- function(x, ...) {
+  tibble::enframe(x, ...) %>%
+    tidyr::unnest()
 }

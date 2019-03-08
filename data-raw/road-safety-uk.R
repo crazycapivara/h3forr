@@ -12,7 +12,7 @@ data_url_road_safety_uk <- paste0(
 uk_road_accidents <- fread(data_url_road_safety_uk) %>% na.omit()
 uk_road_accidents %<>% st_as_sf(coords = c("lng", "lat"), crs = 4326)
 
-geofabrik_en = "http://download.geofabrik.de/europe/great-britain/england/"
+geofabrik_en <- "http://download.geofabrik.de/europe/great-britain/england/"
 
 data_url_polygons <- list(
   greater_manchester = paste0(geofabrik_en, "greater-manchester.poly"),
@@ -53,12 +53,14 @@ manchester <- c(53.48095, -2.23743)
 
 library(leaflet)
 
-leaflet() %>% addProviderTiles("Stamen.Toner") %>%
+leaflet() %>%
+  addProviderTiles("Stamen.Toner") %>%
   addPolygons(data = greater_london_poly) %>%
   addMarkers(lat = city_of_london[1], lng = city_of_london[2]) %>%
   addCircles(data = as.data.frame(road_safety_london))
 
-leaflet() %>% addProviderTiles("Stamen.Toner") %>%
+leaflet() %>%
+  addProviderTiles("Stamen.Toner") %>%
   addPolygons(data = greater_manchester_poly) %>%
   addMarkers(lat = manchester[1], lng = manchester[2]) %>%
   addCircles(data = as.data.frame(road_safety_manchester))

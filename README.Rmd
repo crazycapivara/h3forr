@@ -15,8 +15,11 @@ knitr::opts_chunk$set(
 # h3forr
 
 [![Travis build status](https://travis-ci.org/crazycapivara/h3forr.svg?branch=master)](https://travis-ci.org/crazycapivara/h3forr) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![H3 Version](https://img.shields.io/badge/h3-v3.2.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.2.0)
 
-Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system.
+Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system, via [V8](https://github.com/jeroen/V8) and [h3-js](https://github.com/uber/h3-js).
+
+See [crazycapivara/h3-r](https://github.com/crazycapivara/h3-r) for R bindings to the H3 C library.
 
 ![](man/figures/README-road-safety.png)
 

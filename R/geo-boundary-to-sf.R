@@ -1,13 +1,3 @@
-## TODO: obsolete, remove it!
-#h3_as_sf <- function(data) {
-#  features <- lapply(1:dim(data)[3], function(i) {
-#    list(data[, , i]) %>%
-#      sf::st_polygon()
-#  })
-#  sf::st_sfc(features, crs = 4326) %>%
-#    sf::st_sf()
-#}
-
 features_to_sf <- function(features) {
   sf::st_sfc(features, crs = 4326) %>% sf::st_sf()
 }
