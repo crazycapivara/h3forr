@@ -37,5 +37,6 @@ geo_to_h3.data.frame <- function(coords, res = 7) {
 #' @name geo_to_h3
 #' @export
 geo_to_h3.sf <- function(coords, res = 7) {
-  h3js_map("geoToH3", sf::st_coordinates(coords)[, c("Y", "X")], res)
+  #h3js_map("geoToH3", sf::st_coordinates(coords)[, c("Y", "X")], res)
+  geo_to_h3(sf::st_coordinates(coords)[, c("Y", "X")], res)
 }
