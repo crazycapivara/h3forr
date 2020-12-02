@@ -1,28 +1,36 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-h3forr
-======
 
-[![Travis build status](https://travis-ci.org/crazycapivara/h3forr.svg?branch=master)](https://travis-ci.org/crazycapivara/h3forr) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![H3 Version](https://img.shields.io/badge/h3-v3.2.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.2.0)
+# h3forr
 
-Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal hierarchical spatial indexing system, via [V8](https://github.com/jeroen/V8) and [h3-js](https://github.com/uber/h3-js).
+[![Travis build
+status](https://travis-ci.org/crazycapivara/h3forr.svg?branch=master)](https://travis-ci.org/crazycapivara/h3forr)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![H3
+Version](https://img.shields.io/badge/h3-v3.7.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.7.0)
 
-See [crazycapivara/h3-r](https://github.com/crazycapivara/h3-r) for R bindings to the H3 C library.
+Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal
+hierarchical spatial indexing system, via
+[V8](https://github.com/jeroen/V8) and
+[h3-js](https://github.com/uber/h3-js).
+
+See [h3-r](https://github.com/crazycapivara/h3-r) for R bindings to the
+H3 C library.
 
 ![](man/figures/README-road-safety.png)
 
-Installation
-------------
+## Installation
 
 You can install h3forr from github with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("crazycapivara/h3forr")
+# install.packages("remotes")
+remotes::install_github("crazycapivara/h3forr")
 ```
 
-Quickstart
-----------
+## Quickstart
 
 Core functions:
 
@@ -63,8 +71,7 @@ h3_to_geo_boundary(neighbors) %>%
 #> geometry type:  POLYGON
 #> dimension:      XY
 #> bbox:           xmin: -122.0917 ymin: 37.3175 xmax: -122.009 ymax: 37.38593
-#> epsg (SRID):    4326
-#> proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#> CRS:            EPSG:4326
 #>                         geometry
 #> 1 POLYGON ((-122.0416 37.3411...
 #> 2 POLYGON ((-122.0165 37.3316...
