@@ -1,11 +1,26 @@
 context("core-functions")
 
-test_that("geo to h3: single point", {
+test_that("geo to h3: single point (numeric)", {
   # Prepare
   coords <- get_sample_coords()
 
   # Act
   h3_index <- geo_to_h3(coords)
+
+  # Assert
+  expect_is(h3_index, "character")
+  expect_length(h3_index, 1)
+})
+
+test_that("geo to h3: single df point", {
+  # Prepare
+  point <- get_sample_coords()[2:1] %>%
+    sf::st_point() %>%
+    sf::st_sfc(crs = 4326) %>%
+    sf::st_sf()
+
+  # Act
+  h3_index <- geo_to_h3(point)
 
   # Assert
   expect_is(h3_index, "character")
