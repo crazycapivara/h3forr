@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "h3-js": "^3.2.0"
+    "h3-js": "^3.7.0"
   },
   "devDependencies": {
     "webpack": "^4.25.1",
