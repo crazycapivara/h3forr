@@ -10,6 +10,8 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![H3
 Version](https://img.shields.io/badge/h3-v3.7.0-blue.svg)](https://github.com/uber/h3/releases/tag/v3.7.0)
+[![R build
+status](https://github.com/crazycapivara/h3forr/workflows/R-CMD-check/badge.svg)](https://github.com/crazycapivara/h3forr/actions)
 
 Provides R bindings for [H3](https://uber.github.io/h3/), a hexagonal
 hierarchical spatial indexing system, via

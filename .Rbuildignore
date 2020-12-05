@@ -8,3 +8,4 @@
 javascript/
 sandbox/
 tmp/
+^\.github$
